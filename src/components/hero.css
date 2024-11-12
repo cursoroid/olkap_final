@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 0;
 }
 
 .hero-logo {
@@ -19,6 +19,7 @@ body {
   transform: translate(-50%, -50%); /* Center horizontally and vertically */
   transition: 0.7s;
   color: rgb(255, 255, 255);
+  z-index: ;
 }
 
 .scrolled .hero-logo {
@@ -29,6 +30,7 @@ body {
   color: black;
   height: 10vh;
   margin-top: 25px;
+  z-index: 5;
 }
 
 .tag_bottom.hidden {
@@ -53,7 +55,7 @@ body {
 
 .scrolled .hero_text {
   opacity: 1;
-  top: 70%; /* Center vertically when scrolled */
+  top: 75%; /* Center vertically when scrolled */
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3rem;
@@ -67,7 +69,7 @@ body {
   width: 100%;
   height: calc(100vh + 120px);
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -93,7 +95,7 @@ body {
   width: 100%;
   height: 90px; /* Navbar height */
   background-color: white;
-  z-index: 2;
+  z-index: 0;
   transition: opacity 0.3s ease;
   opacity: 0; /* Initially hidden */
 }
@@ -104,9 +106,9 @@ body {
 
 .dots-container {
   position: absolute;
-  top: 50%;
   width: 100%;
   display: flex;
+  bottom: 30%;
   justify-content: center;
   z-index: 1; /* Above the background but below navbar */
   opacity: 0; /* Initially hidden */
@@ -131,4 +133,16 @@ body {
 .dot.active {
   background-color: white;
   transform: scale(1.2);
+}
+.shop-button{
+  text-decoration: underline;
+  color: white;
+  font-size: 20px;
+  margin-top: 20%;
+  vertical-align: middle;
+  cursor: pointer;
+  z-index: 20;
+}
+.shop-button svg {
+  margin-left: 10px;  /* Adds space between the text and the icon */
 }

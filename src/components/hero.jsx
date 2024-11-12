@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './hero.css';
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 const Hero = () => {
   const [scrolling, setScrolling] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
@@ -40,17 +44,7 @@ const Hero = () => {
         style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       ></div>
 
-      {scrolling && (
-        <div className="dots-container">
-          {bgImages.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === bgIndex ? 'active' : ''}`}
-              onClick={() => handleDotClick(index)}
-            ></span>
-          ))}
-        </div>
-      )}
+      
 
       <div className={`hero-container ${scrolling ? 'scrolled' : ''}`}>
         {/* Inline the SVG here */}
@@ -112,9 +106,23 @@ const Hero = () => {
       </div>
 
       <div className={`herotext-container ${scrolling ? 'scrolled' : ''}`}>
-        <h2 className='hero_text'>
-          Curated Artifacts <br /> for Your Space
-        </h2>
+        <div className='hero_text'>
+          Curated Artifacts <br /> for Your Space <br /><br />
+          {scrolling && (
+        <div className="dots-container">
+          {bgImages.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === bgIndex ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+            ></span>
+          ))}
+        </div>
+      )}
+          <a href="/shop" className="shop-button">
+            Shop Now<FontAwesomeIcon icon={faChevronRight}/>
+          </a>
+        </div>
       </div>
     </>
   );
