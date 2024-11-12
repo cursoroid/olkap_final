@@ -19,7 +19,7 @@ body {
   transform: translate(-50%, -50%); /* Center horizontally and vertically */
   transition: 0.7s;
   color: rgb(255, 255, 255);
-  z-index: ;
+  z-index: 1;
 }
 
 .scrolled .hero-logo {
