@@ -11,6 +11,10 @@ const Hero = () => {
     setScrolling(window.scrollY > 1);
   };
 
+  const handleDotClick = (index) => {
+    setBgIndex(index);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
@@ -35,6 +39,19 @@ const Hero = () => {
         className='background_set'
         style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       ></div>
+
+      {scrolling && (
+        <div className="dots-container">
+          {bgImages.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === bgIndex ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+            ></span>
+          ))}
+        </div>
+      )}
+
       <div className={`hero-container ${scrolling ? 'scrolled' : ''}`}>
         {/* Inline the SVG here */}
         <svg
