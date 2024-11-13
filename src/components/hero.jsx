@@ -64,8 +64,16 @@ const Hero = () => {
 
       {/* Fixed Navbar */}
       <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
-        {/* Navbar content can be added here */}
+        <div className="navbar-left">
+          <a href="/collection" className="navbar-item">Collection</a>
+          <a href="/store" className="navbar-item">Store</a>
+        </div>
+        <div className="navbar-right">
+          <a href="/contact" className="navbar-item">Contact</a>
+          <a href="/about" className="navbar-item">About</a>
+        </div>
       </div>
+
 
 
       <div className={`hero-container ${scrolling ? 'scrolled' : ''}`}>
