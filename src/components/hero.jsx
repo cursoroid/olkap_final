@@ -34,17 +34,39 @@ const Hero = () => {
 
   return (
     <>
-      {/* Fixed Navbar */}
-      <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
-        {/* Navbar content can be added here */}
-      </div>
 
       <div
         className='background_set'
         style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       ></div>
 
-      
+
+      <div className={`herotext-container ${scrolling ? 'scrolled' : ''}`}>
+        <div className='hero_text'>
+          Curated Artifacts <br /> for Your Space <br /><br />
+          {scrolling && (
+            <div className="dots-container">
+              {bgImages.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === bgIndex ? 'active' : ''}`}
+                  onClick={() => handleDotClick(index)}
+                ></span>
+              ))}
+            </div>
+          )}
+          <a href="/shop" className="shop-button">
+            Shop Now<FontAwesomeIcon icon={faChevronRight} />
+          </a>
+        </div>
+      </div>
+
+
+      {/* Fixed Navbar */}
+      <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
+        {/* Navbar content can be added here */}
+      </div>
+
 
       <div className={`hero-container ${scrolling ? 'scrolled' : ''}`}>
         {/* Inline the SVG here */}
@@ -105,25 +127,7 @@ const Hero = () => {
         </svg>
       </div>
 
-      <div className={`herotext-container ${scrolling ? 'scrolled' : ''}`}>
-        <div className='hero_text'>
-          Curated Artifacts <br /> for Your Space <br /><br />
-          {scrolling && (
-        <div className="dots-container">
-          {bgImages.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === bgIndex ? 'active' : ''}`}
-              onClick={() => handleDotClick(index)}
-            ></span>
-          ))}
-        </div>
-      )}
-          <a href="/shop" className="shop-button">
-            Shop Now<FontAwesomeIcon icon={faChevronRight}/>
-          </a>
-        </div>
-      </div>
+
     </>
   );
 };
