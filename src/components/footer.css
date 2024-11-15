@@ -1,15 +1,15 @@
-@import url('https://api.fontshare.com/v2/css?f[]=switzer@1,2&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1&display=swap');
 
 .footer {
   background-color: #f9f7f7;
   color: #8c4e41;
   padding: 2rem 0;
   width: 100%;
-  font-family: 'Switzer', sans-serif;
+  font-family: 'Cabinet Grotesk', sans-serif;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1300px; /* Adjusted width */
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -41,6 +41,9 @@
 
 .links-section ul li, .contactUs ul li {
   margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .links-section ul li a, .contactUs ul li a {
@@ -49,7 +52,11 @@
   font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.2s ease;
-  display: inline-block;
+}
+
+.links-section ul li a:hover, .contactUs ul li a:hover {
+  color: #b35a50;
+  text-decoration: underline;
 }
 
 .company-logo {
@@ -57,29 +64,20 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #333;
+  border-top: 1px solid #b3b3b3;
   margin-top: 3rem;
   padding-top: 1.5rem;
   text-align: center;
   font-size: 0.875rem;
 }
 
-.copyright {
-  display: flex;
-}
-
-/* Media query for tablets */
+/* Media Queries */
 @media (max-width: 1024px) {
   .footer-main {
     gap: 1.5rem;
   }
-  
-  .footer-left, .footer-center, .footer-right {
-    padding: 0 0.5rem;
-  }
 }
 
-/* Media query for mobile devices */
 @media (max-width: 768px) {
   .footer-main {
     flex-direction: column;
@@ -91,24 +89,12 @@
     padding: 1rem 0;
   }
 
-  .links-section ul li a, .contactUs ul li a {
-    padding: 0.5rem 0;
+  .links-section ul li, .contactUs ul li {
+    justify-content: center;
   }
 
-  .links-section ul li a:hover, .contactUs ul li a:hover {
-    transform: none;
+  .company-logo {
+    width: 70%;
+    margin: 0 auto;
   }
-
-  .company-info {
-    margin: 2rem 0;
-  }
-
-  .footer-container {
-    padding: 0 1rem;
-  }
-}
-
-/* Optional: Add smooth scrolling for the whole page */
-html {
-  scroll-behavior: smooth;
 }
