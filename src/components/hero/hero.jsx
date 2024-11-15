@@ -4,11 +4,12 @@ import bg2 from '../../assets/bg2.jpg';
 import bg3 from '../../assets/bg3.jpg';
 import './hero.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
   const [scrolling, setScrolling] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
   const bgImages = [bg1, bg2, bg3];
 
   const handleScroll = useCallback(() => {
@@ -31,6 +32,8 @@ const Hero = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <>
@@ -68,6 +71,19 @@ const Hero = () => {
         <div className="navbar-right">
           <a href="/contact" className="navbar-item">Contact</a>
           <a href="/about" className="navbar-item">About</a>
+        </div>
+
+        {/* Hamburger Icon */}
+        <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+        </div>
+
+        {/* Sliding Menu */}
+        <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
+          <a href="/collection" className="side-menu-item">Collection</a>
+          <a href="/store" className="side-menu-item">Store</a>
+          <a href="/contact" className="side-menu-item">Contact</a>
+          <a href="/about" className="side-menu-item">About</a>
         </div>
       </div>
 
