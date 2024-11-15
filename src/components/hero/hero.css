@@ -5,7 +5,7 @@ body {
 
 .hero-container {
   position: relative;
-  height: calc(100vh + 120px);
+  height: calc(100vh + 110px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,28 +22,27 @@ body {
   transition: 0.7s;
   color: rgb(255, 255, 255);
   z-index: 3;
-
 }
 
 .scrolled .hero-logo {
   position: fixed;
-  transform: translateX(-50%);
-  top: 0;
+  top: 0vh;
   /* Adjust position when scrolled */
   transition: 0.7s;
   color: black;
-  height: 10vh;
-  margin-top: 25px;
+  height: 15vh;
+  width: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .tag_bottom.hidden {
   display: none;
 }
 
-
 .background_set {
   width: 100%;
-  height: calc(100vh + 120px);
+  height: calc(100vh + 110px);
   position: absolute;
   background-size: cover;
   background-position: center;
