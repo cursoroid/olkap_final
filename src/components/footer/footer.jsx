@@ -63,7 +63,7 @@ const Footer = () => {
                     <a href="#">Do follow us On Instagram</a>
                   </li>
                   <li>
-                    <MapPin size={16} /> Store Address: Boat Club Road, City Point, Pune
+                    <MapPin size={16} />Boat Club Road, City Point, Pune
                   </li>
                 </ul>
               </address>

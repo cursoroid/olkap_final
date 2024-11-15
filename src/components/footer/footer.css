@@ -1,11 +1,12 @@
-@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1&display=swap');
+@import url('href="https://api.fontshare.com/v2/css?f[]=recia@1&display=swap');
 
 .footer {
   background-color: #f9f7f7;
   color: #8c4e41;
   padding: 2rem 0;
   width: 100%;
-  font-family: 'Cabinet Grotesk', sans-serif;
+  font-family: 'Recia', serif;
+  font-style: normal; /* Ensures no italics in the footer */
 }
 
 .footer-container {
@@ -21,32 +22,54 @@
   gap: 2rem;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left {
   flex: 1;
   padding: 0 1rem;
+  border-right: 1px solid #b3b3b3; /* Line between left and center */
+  padding-right: 1rem; /* Adds space between content and line */
 }
 
-.footer-links h3, .company-info h3, .contactUs h3 {
+.footer-center {
+  flex: 1;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-right {
+  flex: 1;
+  padding: 0 1rem;
+  border-left: 1px solid #b3b3b3; /* Line between center and right */
+  padding-left: 1rem; /* Adds space between content and line */
+  margin-left: 3rem; /* Moves the right section further to the right */
+}
+
+.footer-links h3, 
+.company-info h3, 
+.contactUs h3 {
   color: #8c4e41;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
-.links-section ul, .contactUs ul {
+.links-section ul, 
+.contactUs ul {
+  font-style: normal;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.links-section ul li, .contactUs ul li {
+.links-section ul li, 
+.contactUs ul li {
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.links-section ul li a, .contactUs ul li a {
+.links-section ul li a, 
+.contactUs ul li a {
   color: #8c4e41;
   text-decoration: none;
   font-size: 0.9rem;
@@ -54,13 +77,21 @@
   transition: color 0.2s ease;
 }
 
-.links-section ul li a:hover, .contactUs ul li a:hover {
+.links-section ul li a:hover, 
+.contactUs ul li a:hover {
   color: #b35a50;
   text-decoration: underline;
 }
 
 .company-logo {
   width: 50%;
+}
+
+/* Hide logo on small screens */
+@media (max-width: 768px) {
+  .company-logo {
+    display: none; /* Hides the logo */
+  }
 }
 
 .footer-bottom {
@@ -84,12 +115,16 @@
     text-align: center;
   }
 
-  .footer-left, .footer-center, .footer-right {
+  .footer-left, 
+  .footer-center, 
+  .footer-right {
     width: 100%;
     padding: 1rem 0;
+    border: none; /* Remove borders on smaller screens */
   }
 
-  .links-section ul li, .contactUs ul li {
+  .links-section ul li, 
+  .contactUs ul li {
     justify-content: center;
   }
 
