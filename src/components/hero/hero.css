@@ -223,6 +223,7 @@ body {
   cursor: pointer;
   font-size: 2.5vh;
   transition: transform 0.3s ease;
+  margin-right: 5%;
 }
 
 .hamburger.open {
@@ -241,7 +242,6 @@ body {
     height: 12vh;
     transform: translate(0%, -50%);
     top: 5.6vh;
-
   }
 
   .navbar-left,
