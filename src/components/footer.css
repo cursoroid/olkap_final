@@ -1,0 +1,114 @@
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@1,2&display=swap');
+
+.footer {
+  background-color: #f9f7f7;
+  color: #8c4e41;
+  padding: 2rem 0;
+  width: 100%;
+  font-family: 'Switzer', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.footer-links h3, .company-info h3, .contactUs h3 {
+  color: #8c4e41;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.links-section ul, .contactUs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-section ul li, .contactUs ul li {
+  margin-bottom: 0.75rem;
+}
+
+.links-section ul li a, .contactUs ul li a {
+  color: #8c4e41;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.company-logo {
+  width: 50%;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.copyright {
+  display: flex;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .footer-main {
+    gap: 1.5rem;
+  }
+  
+  .footer-left, .footer-center, .footer-right {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .links-section ul li a, .contactUs ul li a {
+    padding: 0.5rem 0;
+  }
+
+  .links-section ul li a:hover, .contactUs ul li a:hover {
+    transform: none;
+  }
+
+  .company-info {
+    margin: 2rem 0;
+  }
+
+  .footer-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Optional: Add smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
