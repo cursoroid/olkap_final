@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import bg1 from '../../assets/bg1.jpeg';
+import bg2 from '../../assets/bg2.jpg';
+import bg3 from '../../assets/bg3.jpg';
 import './hero.css';
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
   const [scrolling, setScrolling] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
+  const bgImages = [bg1, bg2, bg3];
 
-  const bgImages = ['src/assets/bg1.jpeg', 'src/assets/bg2.jpg', 'src/assets/bg3.jpg'];
-
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     setScrolling(window.scrollY > 1);
-  };
+  }, []);
 
-  const handleDotClick = (index) => {
+  const handleDotClick = useCallback((index) => {
     setBgIndex(index);
-  };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,24 +25,22 @@ const Hero = () => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [bgImages.length]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   return (
     <>
-
       <div
-        className='background_set'
+        className="background_set"
         style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       ></div>
 
-
       <div className={`herotext-container ${scrolling ? 'scrolled' : ''}`}>
-        <div className='hero_text'>
+        <div className="hero_text">
           Curated Artifacts <br /> for Your Space <br /><br />
           {scrolling && (
             <div className="dots-container">
@@ -51,18 +49,17 @@ const Hero = () => {
                   key={index}
                   className={`dot ${index === bgIndex ? 'active' : ''}`}
                   onClick={() => handleDotClick(index)}
+                  aria-label={`Select background ${index + 1}`}
                 ></span>
               ))}
             </div>
           )}
           <a href="/shop" className="shop-button">
-            Shop Now<FontAwesomeIcon icon={faChevronRight} />
+            Shop Now <FontAwesomeIcon icon={faChevronRight} />
           </a>
         </div>
       </div>
 
-
-      {/* Fixed Navbar */}
       <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
         <div className="navbar-left">
           <a href="/collection" className="navbar-item">Collection</a>
@@ -73,8 +70,6 @@ const Hero = () => {
           <a href="/about" className="navbar-item">About</a>
         </div>
       </div>
-
-
 
       <div className={`hero-container ${scrolling ? 'scrolled' : ''}`}>
         {/* Inline the SVG here */}
@@ -134,10 +129,15 @@ const Hero = () => {
           </g>
         </svg>
       </div>
-
-
     </>
   );
 };
 
 export default Hero;
+
+
+
+
+
+
+
