@@ -30,7 +30,9 @@ const Featured = () => {
         const updateVisibleCards = () => {
             const width = window.innerWidth;
             if (width >= 1200) setVisibleCards(5); // Large screens
+            else if (width >= 992) setVisibleCards(4); // Tablets
             else if (width >= 768) setVisibleCards(3); // Tablets
+            else if (width >= 650) setVisibleCards(2);
             else setVisibleCards(1); // Small screens
         };
 
@@ -68,7 +70,11 @@ const Featured = () => {
 
     return (
         <div className="featured">
-            <h1>Featured</h1>
+            <div className="logo-banner">
+                <img src="./src/assets/banner-logo.svg" alt="Logo" className="logo-banner-logo" />
+            </div>
+
+            <h1>New Arrivals</h1>
             <div className="slider_main">
                 <button className="slider_button prev" onClick={slidePrev}>
                     &#8249;

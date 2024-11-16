@@ -235,7 +235,7 @@ body {
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
   .scrolled .hero-logo {
     left: 5%;

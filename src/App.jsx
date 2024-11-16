@@ -12,9 +12,9 @@ function App() {
 
   return (
     <>
-      <Hero /> {/* Add the Hero component */}
+      <Hero /> 
       <Featured/>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

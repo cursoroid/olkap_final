@@ -119,7 +119,7 @@
   .footer-center, 
   .footer-right {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem ;
     border: none; /* Remove borders on smaller screens */
   }
 
