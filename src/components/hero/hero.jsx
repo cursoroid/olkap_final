@@ -1,10 +1,9 @@
+// src/components/Hero.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import bg1 from '../../assets/bg1.jpeg';
 import bg2 from '../../assets/bg2.jpg';
 import bg3 from '../../assets/bg3.jpg';
 import './hero.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -42,6 +41,8 @@ const Hero = () => {
         style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       ></div>
 
+      
+
       <div className={`herotext-container ${scrolling ? 'scrolled' : ''}`}>
         <div className="hero_text">
           Curated Artifacts <br /> for Your Space <br /><br />
@@ -58,32 +59,8 @@ const Hero = () => {
             </div>
           )}
           <a href="/shop" className="shop-button">
-            Shop Now <FontAwesomeIcon icon={faChevronRight} />
+            Shop Now
           </a>
-        </div>
-      </div>
-
-      <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
-        <div className="navbar-left">
-          <a href="/collection" className="navbar-item">Collection</a>
-          <a href="/store" className="navbar-item">Store</a>
-        </div>
-        <div className="navbar-right">
-          <a href="/contact" className="navbar-item">Contact</a>
-          <a href="/about" className="navbar-item">About</a>
-        </div>
-
-        {/* Hamburger Icon */}
-        <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
-        </div>
-
-        {/* Sliding Menu */}
-        <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
-          <a href="/collection" className="side-menu-item">Collection</a>
-          <a href="/store" className="side-menu-item">Store</a>
-          <a href="/contact" className="side-menu-item">Contact</a>
-          <a href="/about" className="side-menu-item">About</a>
         </div>
       </div>
 
