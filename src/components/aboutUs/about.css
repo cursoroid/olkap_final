@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'HedvigLettersSerif-Regular';
+    src: url('../../assets/fonts/HedvigLettersSerif-Regular.otf') format('opentype');
+}
+
+@import url('https://fonts.cdnfonts.com/css/pp-pangaia');
+
+body {
+    font-family: 'HedvigLettersSerif-Regular', serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+/* Header Section */
+.about-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    font-family: 'HedvigLettersSerif-Regular', serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-header h1 {
+    font-size: 3.5vw; /* Responsive font size */
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-weight: 700;
+    font-size: clamp(2rem, 3.5vw, 3rem); /* Responsive font size with fallback and cap */
+    font-family: 'HedvigLettersSerif-Regular', serif;
+}
+
+.about-header p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    font-family: 'HedvigLettersSerif-Regular', serif;
+}
+
+/* Mission Section */
+.mission-section {
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+    font-family: 'HedvigLettersSerif-Regular', serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-image {
+    width: 70%; /* Reduce the size by 30% */
+    height: auto;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+
+.mission-section h2 {
+    font-size: 2vw; /* Responsive font size */
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 2vw, 2rem); /* Responsive font size with fallback and cap */
+    font-family: 'HedvigLettersSerif-Regular', serif;
+}
+
+.mission-section p {
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-family: 'HedvigLettersSerif-Regular', serif;
+    max-width: 70%; /* Lessen the width */
+}
+
+/* Contact Info */
+.contact-info {
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'HedvigLettersSerif-Regular', serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info p {
+    color: #4b5563;
+    font-size: 1rem;
+    font-family: 'HedvigLettersSerif-Regular', serif;
+}
+
+.contact-info span {
+    font-weight: 500;
+    color: #1f2937;
+    font-family: 'HedvigLettersSerif-Regular', serif;
+}
+
+/* Media Queries */
+@media screen and (max-width: 48rem) { /* 768px */
+    .about-header {
+        padding: 2rem 1rem;
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+
+    .about-header h1 {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+
+    .about-header p {
+        font-size: 1.125rem;
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+
+    .mission-section,
+    .contact-info {
+        padding: 0 1rem 2rem;
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+
+    .mission-section h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+}
+
+/* For very large screens */
+@media screen and (min-width: 90rem) { /* 1440px */
+    .about-header h1 {
+        font-size: 3rem; /* Cap the maximum size */
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+
+    .mission-section h2 {
+        font-size: 2rem;
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 20rem) { /* 320px */
+    .about-header h1 {
+        font-size: 2rem;
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+
+    .mission-section h2 {
+        font-size: 1.5rem;
+        font-family: 'HedvigLettersSerif-Regular', serif;
+    }
+}
