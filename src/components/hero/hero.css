@@ -5,7 +5,6 @@
   --dot-size: 10px;
   --dot-active-scale: 1.2;
   --transition-duration: 0.3s;
-  --font-family: "Poppins", sans-serif;
   --hero-text-color: white;
   --dot-color: rgba(255, 255, 255, 0.7);
   --dot-active-color: white;
@@ -29,6 +28,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image var(--transition-duration) ease-in-out;
+  background-image: url(''), linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7)); /* Gradient overlay */
 }
 
 .background_set::before {
