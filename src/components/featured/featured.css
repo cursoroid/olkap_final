@@ -10,11 +10,11 @@
 .card-slider {
   display: flex;
   transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
-  width: fit-content; /* Prevent extra space */
+  width: 100%;
 }
 
 .product-card {
-  flex: 0 0 20%; /* Default: 5 cards visible */
+  flex: 0 0 20%; /* Each card will take 20% of the container width */
   max-width: 20%;
   display: flex;
   flex-direction: column;
@@ -61,20 +61,20 @@
 @media (max-width: 1024px) {
   .product-card {
     flex: 0 0 25%;
-    max-width: 25%;
+    max-width: 25%; /* 4 cards per row */
   }
 }
 
 @media (max-width: 768px) {
   .product-card {
     flex: 0 0 33.33%;
-    max-width: 33.33%;
+    max-width: 33.33%; /* 3 cards per row */
   }
 }
 
 @media (max-width: 480px) {
   .product-card {
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 50%; /* 2 cards per row */
   }
 }
