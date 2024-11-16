@@ -1,93 +1,96 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_PRODUCTS } from '../../queries';
-import placeholderImage from '../../assets/placeholder-image.jpg';
-import './featured.css';
+import { GET_PRODUCTS } from '../../queries'; // Adjust the path if necessary
+import './featured.css'; // Assuming the styles are in a separate file
 
 const Featured = () => {
   const { loading, error, data } = useQuery(GET_PRODUCTS);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardWidth, setCardWidth] = useState(0);
-  const sliderRef = useRef(null);
+  const [cardsPerRow, setCardsPerRow] = useState(5); // Default to 5 cards per row
 
+  const totalItems = data ? data.products.edges.length : 0;
+
+  // Dynamically calculate the number of cards based on the viewport width
+  const updateCardsPerRow = () => {
+    const width = window.innerWidth;
+    if (width > 992) {
+      setCardsPerRow(5); // 5 cards for large screens
+    } else if (width > 830) {
+      setCardsPerRow(4); // 4 cards for medium screens
+    } else if (width > 768) {
+      setCardsPerRow(3); // 3 cards for tablets
+    } else if (width > 550) {
+      setCardsPerRow(2); // 2 cards for small tablets
+    } else {
+      setCardsPerRow(1); // 1 card for mobile
+    }
+  };
+
+  // Handle window resize to update cards per row dynamically
   useEffect(() => {
-    // Function to calculate card width dynamically
-    const updateCardWidth = () => {
-      if (sliderRef.current) {
-        const cardElement = sliderRef.current.querySelector('.product-card');
-        if (cardElement) {
-          setCardWidth(cardElement.offsetWidth);
-        }
-      }
-    };
-
-    // Update card width on resize
-    window.addEventListener('resize', updateCardWidth);
-    updateCardWidth(); // Initial calculation
-
+    updateCardsPerRow();
+    window.addEventListener('resize', updateCardsPerRow);
     return () => {
-      window.removeEventListener('resize', updateCardWidth);
+      window.removeEventListener('resize', updateCardsPerRow);
     };
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
-  const storeDomain = "https://kollkap.myshopify.com"; // Replace with your Shopify store URL
-
-  // Ensure there are at least 10 products by filling in with placeholder images
-  const products = data.products.edges.length < 10
-    ? [
-        ...data.products.edges,
-        ...Array(10 - data.products.edges.length).fill({
-          node: { images: { edges: [{ node: { transformedSrc: placeholderImage } }] } },
-        }),
-      ]
-    : data.products.edges;
-
-  const handleNext = () => {
-    if (currentIndex < products.length - 1) {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
-    }
+  // Slide to the next product (move one card at a time)
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
   };
 
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prevIndex) => prevIndex - 1);
-    }
+  // Slide to the previous product (move one card at a time)
+  const prevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + totalItems) % totalItems
+    );
   };
+
+  // Fetch current products to display
+  const currentProducts = data
+    ? data.products.edges.slice(currentIndex, currentIndex + cardsPerRow)
+    : [];
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  // Base URL of your Shopify store (replace this with your actual Shopify domain)
+  const shopUrl = 'https://kollkap.myshopify.com/products/';
 
   return (
-    <div className="featured-container">
-      <button className="slider-button prev" onClick={handlePrev}>&#10094;</button>
-      
-      <div className="card-slider" 
-           style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
-           ref={sliderRef}>
-        {products.map(({ node }) => {
-          const productUrl = `${storeDomain}/products/${node.handle}`;
-          return (
-            <div
-              key={node.id}
-              className="product-card"
-              onClick={() => {
-                console.log(productUrl);
-                window.open(productUrl, '_blank');
-              }}
-              style={{ cursor: 'pointer' }}
-            >
-              <img
-                src={node.images.edges[0]?.node.transformedSrc || placeholderImage}
-                alt={node.title || 'Product'}
-                className="product-image"
-              />
-              <h3 className="product-title">{node.title || 'Product Title'}</h3>
-            </div>
-          );
-        })}
+    <div className="featured-slider">
+      <button className="prev-btn" onClick={prevSlide}>
+        &#10094;
+      </button>
+      <div
+        className="slider-container"
+        style={{
+          transform: `translateX(-${(100 / cardsPerRow) * currentIndex}%)`, // Dynamically adjust the transform based on currentIndex
+          transition: "transform 0.5s ease" // Smooth transition
+        }}
+      >
+        {data?.products.edges.map((product, index) => (
+          <a
+            key={product.node.id}
+            href={`${shopUrl}${product.node.handle}`} // Link to product page
+            className={`card ${index === currentIndex ? "active" : ""}`}
+            style={{
+              width: `${100 / cardsPerRow}%`, // Dynamically set card width
+            }}
+          >
+            <img
+              src={product.node.images.edges[0]?.node.transformedSrc}
+              alt={product.node.title}
+              className="product-image"
+            />
+            <h3 className="product-title">{product.node.title}</h3>
+          </a>
+        ))}
       </div>
-      
-      <button className="slider-button next" onClick={handleNext}>&#10095;</button>
+      <button className="next-btn" onClick={nextSlide}>
+        &#10095;
+      </button>
     </div>
   );
 };
