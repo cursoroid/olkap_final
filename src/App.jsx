@@ -3,6 +3,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import Test from './test';
 
 import Navbar from './components/navbar/navbar';
 import Hero from './components/hero/hero'; // Import the Hero component
@@ -40,6 +41,8 @@ const App = () => {
     <>
       <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
       <Hero />
+      {/* <Test /> */}
+
       <Featured />
       
 
