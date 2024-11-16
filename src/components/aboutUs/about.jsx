@@ -1,33 +1,22 @@
 import React from 'react';
 import './About.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 const About = () => {
   return (
-    <>
-      {/* Header Section */}
-      <div className="about-header">
-        <h1>About Us</h1>
+    <div className="about-container">
+      <div className="about-content">
+        <img src="/src/assets/about.jpg" alt="About" className="about-image" />
+        <div className="about-text">
+          <h2>THE ART OF METALCRAFT: AN OLKAP LEGACY</h2>
+          <p>
+          At OLKAP, we transform metal into poetry through a masterful blend of India's rich craftsmanship and contemporary design. Our exquisite accents and lifestyle pieces, crafted with precision and innovative techniques, represent the pinnacle of luxury metalwork, adorning prestigious spaces worldwide.          </p>
+          <a href='' className="about-button">About Us<FontAwesomeIcon icon={faChevronRight} /></a>
+        </div>
       </div>
-
-      {/* Mission Section with Image */}
-      <div className="mission-section">
-        <img 
-          src="src\assets\AB1.jpg" className="mission-image"/>
-        <h2>THE BRAND</h2>
-        <p>
-        At OLKAP, luxury is not just an aspiration - it is a philosophy that permeates every creation, an ethos that speaks to those who understand and appreciate the
-        subtleties of true artistry. Our aesthetic is a testament to refined taste, merging the finest design with impeccable craftsmanship, positioning OLKAP alongside the world's most revered luxury houses.
-        </p>
-      </div>
-
-      {/* Contact Info */}
-      <div className="contact-info">
-        <p><span>Email:</span> contact@example.com</p>
-        <p><span>Address:</span> 123 Business Street, Tech City, TC 12345</p>
-        <p><span>Phone:</span> (555) 123-4567</p>
-      </div>
-      
-    </>
+    </div>
   );
 };
 

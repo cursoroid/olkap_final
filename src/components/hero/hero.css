@@ -55,7 +55,7 @@ body {
 .hero-logo {
   height: 25vw;
   width: auto;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -65,6 +65,7 @@ body {
 }
 
 .scrolled .hero-logo {
+  position: fixed;
   top: 7.5vh;
   height: 18vh;
   color: black;

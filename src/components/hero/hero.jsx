@@ -34,6 +34,9 @@ const Hero = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+
+  
+
   return (
     <>
       <div
@@ -65,6 +68,8 @@ const Hero = () => {
       </div>
 
       <div className={`hero-container ${scrolling ? 'scrolled' : ''}`}>
+
+      <div class="hero-logo-wrapper">
         {/* Inline the SVG here */}
         <svg
           viewBox="156.217464 419.75928 771.12 246.24"
@@ -121,6 +126,7 @@ const Hero = () => {
             <circle class="cls-1" cx="643.93" cy="642.1" r="3.15" />
           </g>
         </svg>
+        </div>
       </div>
     </>
   );

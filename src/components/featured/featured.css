@@ -1,3 +1,39 @@
+.featured-main{
+  width: 100%;
+}
+.featured-main h1{
+  font-weight: normal;
+  margin: 5vh;
+  font-size: 1.5rem;
+}
+.store-btn{
+  text-align: center;
+  margin: 6vh;
+}
+.store-btn a{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  padding: 5px 30px;
+}
+.logo-banner {
+  width: 100%;
+  height: 250px;
+  background-image: url('/src/assets/logo-banner-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.banner-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+}
+
 .featured-slider {
   display: flex;
   justify-content: center;
@@ -14,20 +50,22 @@
 
 .card {
   flex: 0 0 auto;
-  text-align: center;
   box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 2px;
 }
-
 .product-image {
   width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 
 .product-title {
-  font-size: 1.2rem;
-  margin-top: 10px;
+  position: relative;
+  font-size: 1rem;
   font-weight: bold;
+  font-weight: normal;
+  color: black;
+  margin-left: 5px;
 }
 
 .prev-btn,
@@ -56,3 +94,4 @@
 .next-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+

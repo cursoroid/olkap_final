@@ -3,11 +3,12 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import Test from './test';
 
 import Navbar from './components/navbar/navbar';
 import Hero from './components/hero/hero'; // Import the Hero component
 import Featured from './components/featured/featured';
+import About from './components/aboutUs/about';
+import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
 
 
@@ -41,12 +42,9 @@ const App = () => {
     <>
       <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
       <Hero />
-      {/* <Test /> */}
-
       <Featured />
-      
-
-      {/* <Footer /> */}
+      <About />
+      <Recommend />
     </>
   );
 }
