@@ -5,7 +5,7 @@ import './App.css';
 import Navbar from './components/navbar/navbar';
 import Hero from './components/hero/hero';
 import Featured from './components/featured/featured';
-// import About from './components/aboutUs/about';
+import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
 import TopPicks from "./components/top-picks/top-picks";
@@ -48,7 +48,7 @@ const App = () => {
             <TopPicks />
           </>
         } />
-        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </>
