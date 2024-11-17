@@ -1,135 +1,100 @@
-@import url('href="https://api.fontshare.com/v2/css?f[]=recia@1&display=swap');
-
+.container{
+  margin: 5vh;
+}
 .footer {
-  background-color: #f9f7f7;
-  color: #8c4e41;
-  padding: 2rem 0;
-  width: 100%;
-  font-family: 'Recia', serif;
-  font-style: normal; /* Ensures no italics in the footer */
+  padding: 5vh 0;
+  background: #baa7a7;
+  color: #333;
 }
 
-.footer-container {
-  max-width: 1300px; /* Adjusted width */
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.footer-main {
+.footer-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 100px;
 }
 
-.footer-left {
-  flex: 1;
-  padding: 0 1rem;
-  border-right: 1px solid #b3b3b3; /* Line between left and center */
-  padding-right: 1rem; /* Adds space between content and line */
+.footer-column {
+  flex: 1 1 calc(25% - 100px);
+  min-width: 200px;
 }
 
-.footer-center {
-  flex: 1;
-  padding: 0 1rem;
-  text-align: center;
+.footer-logo img {
+  max-width: 160px;
 }
 
-.footer-right {
-  flex: 1;
-  padding: 0 1rem;
-  border-left: 1px solid #b3b3b3; /* Line between center and right */
-  padding-left: 1rem; /* Adds space between content and line */
-  margin-left: 3rem; /* Moves the right section further to the right */
+.footer-logo .logo-dark {
+  display: none;
 }
 
-.footer-links h3, 
-.company-info h3, 
-.contactUs h3 {
-  color: #8c4e41;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+.footer.dark .logo-light {
+  display: none;
 }
 
-.links-section ul, 
-.contactUs ul {
-  font-style: normal;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.footer.dark .logo-dark {
+  display: block;
 }
 
-.links-section ul li, 
-.contactUs ul li {
-  margin-bottom: 0.75rem;
+.footer-description {
+  margin: 20px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.footer.dark .footer-description {
+  color: #ddd;
+}
+
+.footer-contact {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #555;
 }
 
-.links-section ul li a, 
-.contactUs ul li a {
-  color: #8c4e41;
+.footer-icon {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #555;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.3s;
 }
 
-.links-section ul li a:hover, 
-.contactUs ul li a:hover {
-  color: #b35a50;
-  text-decoration: underline;
+.footer-links a:hover {
+  color: #007bff;
 }
 
-.company-logo {
-  width: 50%;
+.footer-social {
+  display: flex;
+  gap: 10px;
 }
 
-/* Hide logo on small screens */
-@media (max-width: 768px) {
-  .company-logo {
-    display: none; /* Hides the logo */
-  }
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  margin-top: 10px;
+  height: 32px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  color: #555;
+  transition: background 0.3s, color 0.3s;
 }
 
-.footer-bottom {
-  border-top: 1px solid #b3b3b3;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  text-align: center;
-  font-size: 0.875rem;
+.social-link:hover {
+  background: #007bff;
+  color: #fff;
 }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-  .footer-main {
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-main {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-left, 
-  .footer-center, 
-  .footer-right {
-    width: 100%;
-    padding: 1rem ;
-    border: none; /* Remove borders on smaller screens */
-  }
-
-  .links-section ul li, 
-  .contactUs ul li {
-    justify-content: center;
-  }
-
-  .company-logo {
-    width: 70%;
-    margin: 0 auto;
-  }
-}

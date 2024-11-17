@@ -10,6 +10,8 @@ import Featured from './components/featured/featured';
 import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
+import TopPicks from "./components/top-picks/top-picks"; // Adjust the path based on your folder structure
+
 
 
 const App = () => {
@@ -45,6 +47,8 @@ const App = () => {
       <Featured />
       <About />
       <Recommend />
+      <TopPicks />
+      <Footer />
     </>
   );
 }

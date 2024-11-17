@@ -14,24 +14,26 @@
 }
 
 .about-image {
-    width: 50%;
+    width: 40%;
     object-fit: cover;
 }
 
 .about-text {
-    margin-left: 20px;
-    max-width: 50%;
+    font-size: 1.5rem;
+    margin-left: 50px;
+    max-width: 60%;
     padding: 20px;
 }
 
 .about-text h2 {
+    font-size: 2rem;
     margin-bottom: 50px;
     font-weight: 500;
 }
 
 .about-button {
     position: relative;
-    top: 20px;
+    top: 50px;
     color: rgb(3, 0, 0);
     border: none;
     cursor: pointer;
@@ -47,28 +49,37 @@
 /* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* Stack the container vertically */
+        flex-direction: column;
+        /* Stack the container vertically */
         margin-top: 30px;
     }
 
     .about-content {
-        flex-direction: column; /* Stack the content vertically */
+        flex-direction: column;
+        /* Stack the content vertically */
         align-items: center;
     }
 
     .about-image {
-        width: 100%; /* Make the image take full width */
-        margin-bottom: 20px; /* Add space below the image */
+        width: 100%;
+        /* Make the image take full width */
+        margin-bottom: 20px;
+        /* Add space below the image */
     }
 
     .about-text {
-        margin-left: 0; /* Remove the left margin */
-        max-width: 100%; /* Allow text to take full width */
-        text-align: center; /* Center the text */
+        margin-left: 0;
+        /* Remove the left margin */
+        max-width: 100%;
+        /* Allow text to take full width */
+        text-align: center;
+        /* Center the text */
     }
 
     .about-button {
-        top: 10px; /* Adjust the top position */
-        font-size: 18px; /* Increase font size for readability */
+        top: 10px;
+        /* Adjust the top position */
+        font-size: 18px;
+        /* Increase font size for readability */
     }
 }

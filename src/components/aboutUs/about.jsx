@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="about-container">
       <div className="about-content">
-        <img src="/src/assets/about.jpg" alt="About" className="about-image" />
+        <img src="/src/assets/about.png" alt="About" className="about-image" />
         <div className="about-text">
           <h2>THE ART OF METALCRAFT: AN OLKAP LEGACY</h2>
           <p>
