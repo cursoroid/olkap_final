@@ -34,7 +34,11 @@ const TopPicks = () => {
           </div>
           <div className="product-info">
             <h2>{product.title}</h2>
-            <p>{product.description || "No description available."}</p>
+            {/* Render HTML safely */}
+            <div
+              className="product-description"
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
             <a
               className="buy-now"
               href={`${shopUrl}${product.handle}`} // Use product handle for the URL

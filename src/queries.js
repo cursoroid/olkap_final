@@ -8,7 +8,7 @@ query {
         id
         title
         handle
-        description
+        descriptionHtml
         images(first: 1) {
           edges {
             node {
@@ -20,5 +20,4 @@ query {
     }
   }
 }
-
 `;
