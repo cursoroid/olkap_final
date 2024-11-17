@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 .container{
   margin: 5vh;
 }
+
 .footer {
   padding: 5vh 0;
-  background: #baa7a7;
-  color: #333;
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .footer-row {
@@ -18,8 +22,14 @@
   min-width: 200px;
 }
 
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .footer-logo img {
-  max-width: 160px;
+  max-width: 200px;
 }
 
 .footer-logo .logo-dark {
@@ -34,26 +44,28 @@
   display: block;
 }
 
-.footer-description {
-  margin: 20px 0;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.footer.dark .footer-description {
-  color: #ddd;
-}
-
 .footer-contact {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
-  color: #555;
+  color: #000000;
 }
 
 .footer-icon {
   margin-right: 10px;
-  color: #007bff;
+  color: #ffffff;
+}
+
+.social-text {
+  font-family: 'Cormorant Garamond', serif !important;
+}
+
+.footer-heading {
+  margin-bottom: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
 }
 
 .footer-links {
@@ -66,35 +78,51 @@
 }
 
 .footer-links a {
-  color: #555;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .footer-links a:hover {
-  color: #007bff;
+  color: #8f8f8f;
 }
 
 .footer-social {
+  list-style: none;
+  padding: 0;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-social li {
+  margin: 0;
 }
 
 .social-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  margin-top: 10px;
-  height: 32px;
-  border: 1px solid #555;
-  border-radius: 50%;
-  color: #555;
-  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .social-link:hover {
-  background: #007bff;
-  color: #fff;
+  color: #8f8f8f;
 }
 
+.social-link svg {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.social-text {
+  font-size: 1.1rem;
+}

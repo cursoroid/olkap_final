@@ -1,12 +1,15 @@
 import React from "react";
 import "./footer.css";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faFacebookF,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -17,60 +20,66 @@ const Footer = () => {
           <div className="footer-column">
             <a href="#" className="footer-logo">
               <img
-                src="./src/assets/flogo.svg"
+                src="./src/assets/flogow.svg"
                 alt="logo"
                 className="logo-light"
               />
               <img
-                src="/path/to/logo-white.svg"
+                src="./src/assets/flogod.svg"
                 alt="logo-dark"
                 className="logo-dark"
               />
             </a>
-            <p className="footer-description">
-              Sed ut perspiciatis undmnis is iste natus error sit amet voluptatem totam rem aperiam.
-            </p>
-            <p className="footer-contact">
-              +012 (345) 678 99
-            </p>
           </div>
 
           {/* Company Links */}
           <div className="footer-column">
-            <h4 className="footer-heading">Company</h4>
+            <h4 className="footer-heading">Quick Access</h4>
             <ul className="footer-links">
-              <li><a href="#">About TailGrids</a></li>
-              <li><a href="#">Contact & Support</a></li>
-              <li><a href="#">Success History</a></li>
-              <li><a href="#">Setting & Privacy</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Store</a></li>
+              <li><a href="#">Collection</a></li> 
+              <li><a href="#">Features Products</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Contact Us */}
           <div className="footer-column">
-            <h4 className="footer-heading">Quick Links</h4>
-            <ul className="footer-links">
-              <li><a href="#">Premium Support</a></li>
-              <li><a href="#">Our Services</a></li>
-              <li><a href="#">Know Our Team</a></li>
-              <li><a href="#">Download App</a></li>
+            <h4 className="footer-heading">Contact Us</h4>
+            <ul className="footer-social">
+              <li>
+                <a href="mailto:info@olkap.com" className="social-link">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  <span className="social-text">info@olkap.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-link">
+                  <FontAwesomeIcon icon={faInstagram} />
+                  <span className="social-text">Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-link">
+                  <FontAwesomeIcon icon={faFacebookF} />
+                  <span className="social-text">Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-link">
+                  <FontAwesomeIcon icon={faLinkedinIn} />
+                  <span className="social-text">LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-link">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <span className="social-text">Tower 1, City Point, Boat Club Rd, Pune - 411001</span>
+                </a>
+              </li>
             </ul>
-          </div>
-
-          {/* Follow Us */}
-          <div className="footer-column">
-            <h4 className="footer-heading">Follow Us On</h4>
-            <div className="footer-social">
-              <a href="#" className="social-link">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a href="#" className="social-link">
-                <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              <a href="#" className="social-link">
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-            </div>
           </div>
         </div>
       </div>
