@@ -1,18 +1,14 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
 import './App.css';
 
 import Navbar from './components/navbar/navbar';
-import Hero from './components/hero/hero'; // Import the Hero component
+import Hero from './components/hero/hero';
 import Featured from './components/featured/featured';
-import About from './components/aboutUs/about';
+// import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
-import TopPicks from "./components/top-picks/top-picks"; // Adjust the path based on your folder structure
-
-
+import TopPicks from "./components/top-picks/top-picks";
 
 const App = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -43,11 +39,17 @@ const App = () => {
   return (
     <>
       <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
-      <Hero />
-      <Featured />
-      <About />
-      <Recommend />
-      <TopPicks />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <Featured />
+            <Recommend />
+            <TopPicks />
+          </>
+        } />
+        {/* <Route path="/about" element={<About />} /> */}
+      </Routes>
       <Footer />
     </>
   );
