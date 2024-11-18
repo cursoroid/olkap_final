@@ -48,11 +48,12 @@
   }
   
   .product-name {
-    margin-top: 10px;
     font-size: 1rem;
+    margin-bottom: 10px;
     font-weight: normal;
     color: #333;
     text-overflow: ellipsis;
+    margin-left: 20px;
     overflow: hidden;
     white-space: nowrap; /* Prevents long text from wrapping */
   }
