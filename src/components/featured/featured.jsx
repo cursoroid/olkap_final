@@ -116,7 +116,7 @@ const Featured = () => {
                 </div>
 
                 <div className='store-btn'>
-                    <a href="#">Store &nbsp; <FontAwesomeIcon className="thin-icon" size="lg" icon={faArrowRight} /></a>
+                    <a href="#">Store</a>
                 </div>
 
                 <motion.div
