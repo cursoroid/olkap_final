@@ -46,7 +46,7 @@ const Aboutcomp = () => {
         reverseLayout={false}
       />
       <AboutSection
-        title="THE ART OF METALCRAFT: AN OLKAP LEGACY"
+        title="THE ART OF METALCRAFT"
         description="At OLKAP, we transform metal into poetry through a masterful blend of India's rich craftsmanship and contemporary design. Our exquisite accents and lifestyle pieces, crafted with precision and innovative techniques, represent the pinnacle of luxury metalwork, adorning prestigious spaces worldwide."
         imageSrc="/src/assets/2c.jpg"
         reverseLayout={true}

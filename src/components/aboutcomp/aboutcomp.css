@@ -1,170 +1,87 @@
-/* src/components/aboutUs/aboutcomp.css */
-
-:root {
-  --primary-color: #2c2c2c;
-  --accent-color: #d4af37; /* Elegant gold */
-  --background-color: #f9f9f9;
-  --text-color: #555;
-}
-
-body {
-  font-family: 'Lora', serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.aboutcomp-container {
-  max-width: 1200px; /* Increased max-width for broader layout */
-  margin: 0 auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.aboutcomp-section-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
-  background-color: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.aboutcomp-section-container:nth-child(odd) .aboutcomp-section-content {
-  order: 1;
-}
-
-.aboutcomp-section-container:nth-child(even) .aboutcomp-section-content {
-  order: 2;
-}
-
-.aboutcomp-section-container:nth-child(odd) .aboutcomp-section-image {
-  order: 2;
-}
-
-.aboutcomp-section-container:nth-child(even) .aboutcomp-section-image {
-  order: 1;
-}
-
-.aboutcomp-section-image {
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-}
-
-.aboutcomp-section-content {
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* Rest of the CSS remains the same as in the previous submission */
-.aboutcomp-hero {
-  background: var(--primary-color);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  border-radius: 12px;
-}
-
-.aboutcomp-hero h1 {
-  font-size: 3rem;
-  color: var(--accent-color);
-  margin-bottom: 0.5rem;
-  letter-spacing: 1.5px;
-  font-weight: bold;
-}
-
-.aboutcomp-hero p {
-  font-size: 1.3rem;
-  max-width: 700px;
-  margin: 0 auto;
-  opacity: 0.9;
-}
-
-.aboutcomp-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.aboutcomp-section h2 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.aboutcomp-section p {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: var(--text-color);
-}
-
-.aboutcomp-alt {
-  background-color: #f3f3f3; /* Light background for alternating sections */
-}
-
-.aboutcomp-contact {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 3rem;
-  text-align: center;
-  border-radius: 12px;
-  margin-top: 2rem;
-}
-
-.aboutcomp-contact h2 {
-  color: var(--accent-color);
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.aboutcomp-contact p {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.aboutcomp-contact strong {
-  color: var(--accent-color);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .aboutcomp-section-container {
-    grid-template-columns: 1fr;
+/* Main container for the About Us page */
+.about-page {
+    padding: 2rem; /* Padding for the entire page */
   }
-
-  .aboutcomp-section-container:nth-child(odd) .aboutcomp-section-content,
-  .aboutcomp-section-container:nth-child(even) .aboutcomp-section-content,
-  .aboutcomp-section-container:nth-child(odd) .aboutcomp-section-image,
-  .aboutcomp-section-container:nth-child(even) .aboutcomp-section-image {
-    order: 0;
+  
+  /* Heading styles for "About Us" */
+  .page-heading {
+    font-family: 'Helvetica Neue', sans-serif; /* Font for the heading */
+    font-size: 2.5rem; /* Font size for the heading */
+    font-weight: 500; /* Bold weight */
+    text-align: center; /* Center align the heading */
+    margin-bottom: 3rem; /* Space below the heading */
+    color: #222; /* Dark color for the heading */
   }
-
-  .aboutcomp-section-image {
-    height: 300px;
+  
+  /* Section container styles */
+  .section-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
   }
-}
-
-@media (max-width: 768px) {
-  .aboutcomp-container {
-    padding: 1rem;
+  
+  .section-container.reverse {
+    flex-direction: row-reverse; /* Reverse layout for sections with reverseLayout=true */
   }
-
-  .aboutcomp-hero h1 {
-    font-size: 2.5rem;
+  
+  /* Section text styles */
+  .section-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left; /* Align text to the left */
+    color: #333;
+    font-family: 'SF Pro Display', sans-serif; /* Font for paragraph text */
   }
-
-  .aboutcomp-hero p {
-    font-size: 1.1rem;
+  
+  .section-text h2 {
+    font-size: 2rem; /* Heading font size */
+    margin-bottom: 1rem; /* Space below the heading */
+    color: #222; /* Title color */
+    font-family: 'Helvetica Neue', sans-serif; /* Font for section headings */
+    font-weight: 500;
   }
-
-    .aboutcomp-section h2 {
-      font-size: 1.8rem;
+  
+  .section-text p {
+    font-size: 1rem; /* Paragraph font size */
+    line-height: 1.6; /* Line height for better readability */
+    margin-bottom: 1.5rem; /* Space below the paragraph */
+    color: #555; /* Subtle text color */
+    font-family: 'SF Pro Display', sans-serif; /* Font for paragraph text */
+  }
+  
+  /* Section image styles */
+  .section-image {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .section-container {
+      flex-direction: column; /* Stack sections vertically for smaller screens */
+    }
+  
+    .section-container.reverse {
+      flex-direction: column; /* Reverse does not matter when stacked */
+    }
+  
+    .section-text {
+      max-width: 100%; /* Full width for text */
+      text-align: center; /* Center-align text for better mobile experience */
+    }
+  
+    .section-image {
+      max-width: 100%; /* Ensure the image fits the container width */
+    }
+  
+    .page-heading {
+      font-size: 2rem; /* Slightly smaller font size for mobile screens */
+      margin-bottom: 2rem; /* Adjust spacing for smaller screens */
     }
   }
+  
