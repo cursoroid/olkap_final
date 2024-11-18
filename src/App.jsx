@@ -9,6 +9,7 @@ import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
 import TopPicks from "./components/top-picks/top-picks";
+import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx"
 
 const App = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -46,9 +47,10 @@ const App = () => {
             <Featured />
             <Recommend />
             <TopPicks />
+            <About />
           </>
         } />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<Aboutcomp />} />
       </Routes>
       <Footer />
     </>
