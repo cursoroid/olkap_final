@@ -9,6 +9,7 @@ import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
 import TopPicks from "./components/top-picks/top-picks";
+import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx"
 import FinalSection from "./components/final_section/final_section"; // Adjust the path as necessary
 
 
@@ -49,10 +50,11 @@ const App = () => {
             <About />
             <Recommend />
             <TopPicks />
+            <About />
             <FinalSection />
           </>
         } />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<Aboutcomp />} />
       </Routes>
       <Footer />
     </>

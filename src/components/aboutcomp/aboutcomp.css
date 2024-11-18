@@ -1,0 +1,93 @@
+/* src/components/aboutUs/about.css */
+
+:root {
+  --primary-color: #2c2c2c;
+  --accent-color: #d4af37; /* Elegant gold */
+  --background-color: #f9f9f9;
+  --text-color: #555;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between each section */
+}
+
+.about-hero {
+  background: var(--primary-color);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+.about-hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.about-section {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alt {
+  background-color: #f3f3f3; /* Light background for alternating sections */
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin: 0 auto;
+}
+
+.about-contact {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.about-contact h2 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+}
+
+.about-contact p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-contact strong {
+  color: var(--accent-color);
+}
