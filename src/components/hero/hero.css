@@ -1,7 +1,6 @@
 /* Root Variables */
 :root {
   --header-height: 110px;
-  --navbar-height: 12vh;
   --dot-size: 10px;
   --dot-active-scale: 1.2;
   --transition-duration: 0.3s;
@@ -66,52 +65,14 @@ body {
 
 .scrolled .hero-logo {
   position: fixed;
-  top: 7.5vh;
-  height: 18vh;
+  top: 6vh;
+  height: 10vh;
   color: black;
   transition: ease-in var(--transition-duration);
 }
 
 .tag_bottom.hidden {
   display: none;
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--navbar-height);
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  opacity: 0;
-  z-index: 2;
-  transition: opacity var(--transition-duration) ease;
-}
-
-.navbar.scrolled {
-  opacity: 1;
-}
-
-.navbar-left,
-.navbar-right {
-  display: flex;
-  margin: 0 50px;
-  gap: 50px;
-}
-
-.navbar-item {
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: black;
-  transition: color var(--transition-duration);
-}
-
-.navbar-item:hover {
-  color: gray;
 }
 
 /* Hero Text */
@@ -183,19 +144,14 @@ body {
   /* Adds space between the text and the icon */
 }
 
-
 @media only screen and (max-width: 992px) {
   .scrolled .hero-logo {
     height: 16vh;
     top: 6.5vh;
   }
 
-  .navbar {
-    height: 10vh;
-  }
-
-  .navbar-item {
-    font-size: 1rem;
+  .hero_text {
+    font-size: 3.5rem;
   }
 }
 
@@ -205,39 +161,12 @@ body {
     top: 6vh;
   }
 
-  .navbar {
-    height: 9vh;
-  }
-
-  .navbar-item {
-    font-size: 0.8rem;
-  }
-
   .hero_text {
     font-size: 3.5rem;
   }
 }
 
-/* Hamburger Icon */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  font-size: 2.5vh;
-  transition: transform 0.3s ease;
-  margin-right: 5%;
-}
-
-.hamburger.open {
-  transform: rotate(180deg);
-  /* Animation for rotating the hamburger to cross */
-}
-
-.side-menu {
-  display: none;
-}
-
 @media (max-width: 768px) {
-
   .scrolled .hero-logo {
     left: 5%;
     height: 12vh;
@@ -245,51 +174,7 @@ body {
     top: 5.6vh;
   }
 
-  .navbar-left,
-  .navbar-right {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 2.8vh;
-    z-index: 10;
-  }
-
-  /* Side Menu */
-  .side-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    /* Initially hidden */
-    width: 100%;
-    height: 100%;
-    background-color: #ccc7c4;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    transition: right 0.3s ease-in-out;
-  }
-
-  .side-menu.open {
-    right: 0;
-  }
-
-  .side-menu-item {
-    position: relative;
-    top: var(--header-height);
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin: 15px 0;
-    transition: color 0.3s;
-    margin: 5%;
-  }
-
-  .side-menu-item:hover {
-    color: gray;
+  .hero_text {
+    font-size: 3rem;
   }
 }
-

@@ -42,7 +42,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   height: 200px; /* Adjust size as needed */
-  z-index: 2; /* Ensure it sits above the overlay */
+  z-index: 1; /* Ensure it sits above the overlay */
 }
 
 .featured-slider {
