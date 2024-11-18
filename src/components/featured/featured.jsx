@@ -3,6 +3,8 @@ import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '../../queries'; // Adjust the path if necessary
 import './featured.css'; // Assuming the styles are in a separate file
 
+import { motion } from "framer-motion";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -64,50 +66,73 @@ const Featured = () => {
 
     return (
 
-        <div className='featured-main'>
-            <h1>New Arrivals</h1>
-            <div className="featured-slider">
-                <button className="prev-btn" onClick={prevSlide}>
-                    &#10094;
-                </button>
-                <div
-                    className="slider-container"
-                    style={{
-                        transform: `translateX(-${(100 / cardsPerRow) * currentIndex}%)`, // Dynamically adjust the transform based on currentIndex
-                        transition: "transform 0.5s ease" // Smooth transition
+        <motion.div
+            initial={{ opacity: 0, y: 100 }} // Start completely invisible and below
+            whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+            viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% of the component is visible
+            transition={{
+                duration: 2, // Smooth transition over 1 second
+                ease: [0.25, 0.8, 0.25, 1] // Custom cubic-bezier easing for smoothness
+            }}
+        >
+
+            <div className='featured-main'>
+                <h1>New Arrivals</h1>
+                <div className="featured-slider">
+                    <button className="prev-btn" onClick={prevSlide}>
+                        &#10094;
+                    </button>
+                    <div
+                        className="slider-container"
+                        style={{
+                            transform: `translateX(-${(100 / cardsPerRow) * currentIndex}%)`, // Dynamically adjust the transform based on currentIndex
+                            transition: "transform 0.5s ease" // Smooth transition
+                        }}
+                    >
+                        {data?.products.edges.map((product, index) => (
+                            <a
+                                key={product.node.id}
+                                href={`${shopUrl}${product.node.handle}`} // Link to product page
+                                className={`card ${index === currentIndex ? "active" : ""}`}
+                                style={{
+                                    width: `${100 / cardsPerRow}%`, // Dynamically set card width
+                                }}
+                            >
+                                <img
+                                    src={product.node.images.edges[0]?.node.transformedSrc}
+                                    alt={product.node.title}
+                                    className="product-image"
+                                />
+                                <h3 className="product-title">{product.node.title}</h3>
+                            </a>
+                        ))}
+                    </div>
+                    <button className="next-btn" onClick={nextSlide}>
+                        &#10095;
+                    </button>
+                </div>
+
+                <div className='store-btn'>
+                    <a href="#">Store &nbsp; <FontAwesomeIcon className="thin-icon" size="lg" icon={faArrowRight} /></a>
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }} // Start completely invisible and below
+                    whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+                    viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% of the component is visible
+                    transition={{
+                        duration: 1, // Smooth transition over 1 second
+                        ease: [0.25, 0.8, 0.25, 1] // Custom cubic-bezier easing for smoothness
                     }}
                 >
-                    {data?.products.edges.map((product, index) => (
-                        <a
-                            key={product.node.id}
-                            href={`${shopUrl}${product.node.handle}`} // Link to product page
-                            className={`card ${index === currentIndex ? "active" : ""}`}
-                            style={{
-                                width: `${100 / cardsPerRow}%`, // Dynamically set card width
-                            }}
-                        >
-                            <img
-                                src={product.node.images.edges[0]?.node.transformedSrc}
-                                alt={product.node.title}
-                                className="product-image"
-                            />
-                            <h3 className="product-title">{product.node.title}</h3>
-                        </a>
-                    ))}
-                </div>
-                <button className="next-btn" onClick={nextSlide}>
-                    &#10095;
-                </button>
+
+                    <div className="logo-banner">
+                        <img src="/src/assets/banner-logo.svg" alt="Logo" className="banner-logo" />
+                    </div>
+                </motion.div>
             </div>
 
-            <div className='store-btn'>
-                <a href="#">Store &nbsp; <FontAwesomeIcon className="thin-icon" size="lg" icon={faArrowRight} /></a>
-            </div>
-
-            <div className="logo-banner">
-                <img src="/src/assets/banner-logo.svg" alt="Logo" className="banner-logo" />
-            </div>
-        </div>
+        </motion.div>
 
     );
 };

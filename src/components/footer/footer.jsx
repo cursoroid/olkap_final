@@ -10,9 +10,20 @@ import {
   faEnvelope,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+
 
 const Footer = () => {
   return (
+    <motion.div
+        initial={{ opacity: 0, y: 100 }} // Start completely invisible and below
+        whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+        viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% of the component is visible
+        transition={{
+          duration: 1, // Smooth transition over 1 second
+          ease: [0.25, 0.8, 0.25, 1] // Custom cubic-bezier easing for smoothness
+        }}
+      >
     <footer className="footer bg-white dark:bg-dark">
       <div className="container mx-auto">
         <div className="footer-row">
@@ -84,6 +95,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </motion.div>
   );
 };
 

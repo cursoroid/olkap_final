@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
 .container{
-  margin: 5vh;
+  margin: vh;
 }
 
 .footer {
@@ -9,6 +9,7 @@
   background: #000000;
   color: #ffffff;
   font-family: 'Cormorant Garamond', serif;
+  margin-top: 100px;
 }
 
 .footer-row {

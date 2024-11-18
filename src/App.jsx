@@ -9,6 +9,8 @@ import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
 import TopPicks from "./components/top-picks/top-picks";
+import FinalSection from "./components/final_section/final_section"; // Adjust the path as necessary
+
 
 const App = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -44,8 +46,10 @@ const App = () => {
           <>
             <Hero />
             <Featured />
+            <About />
             <Recommend />
             <TopPicks />
+            <FinalSection />
           </>
         } />
         <Route path="/about" element={<About />} />

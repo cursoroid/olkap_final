@@ -2,11 +2,13 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../../queries"; // Adjust path if necessary
 import "./top-picks.css";
+import { motion } from "framer-motion";
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const SPECIFIC_PRODUCTS = ["Coral", "Sunburst", "Solis"]; // Replace with desired product names
+const SPECIFIC_PRODUCTS = ["Coral", "Sunburst"]; // Replace with desired product names
 const shopUrl = 'https://kollkap.myshopify.com/products/';
 
 const TopPicks = () => {
@@ -21,7 +23,19 @@ const TopPicks = () => {
 
   return (
     <div className="top-picks">
+      <div className="top-picks-head">
+          <h1>Top picks</h1>
+      </div>
       {products.map((product, index) => (
+        <motion.div
+        initial={{ opacity: 0, y: 100 }} // Start completely invisible and below
+        whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+        viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% of the component is visible
+        transition={{
+          duration: 1, // Smooth transition over 1 second
+          ease: [0.25, 0.8, 0.25, 1] // Custom cubic-bezier easing for smoothness
+        }}
+      >
         <div
           key={product.id}
           className={`top-pick-item ${index % 2 === 0 ? "image-left" : "image-right"}`}
@@ -49,6 +63,8 @@ const TopPicks = () => {
             </a>
           </div>
         </div>
+        </motion.div>
+
       ))}
     </div>
   );
