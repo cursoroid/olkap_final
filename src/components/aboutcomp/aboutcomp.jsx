@@ -10,7 +10,7 @@ const Aboutcomp = () => {
       </section>
 
       <div className="aboutcomp-section-container">
-        <div className="aboutcomp-section-image" style={{backgroundImage: 'url("/api/placeholder/800/600?text=Our+Story")'}}></div>
+        <div className="aboutcomp-section-image" style={{backgroundImage: 'url("https://res.cloudinary.com/dfrpcqahh/image/upload/v1731954495/Olkap/Screenshot_2024-11-01_002351-ai-brush-removebg-9kds623jf_1_nlzrla.png")'}}></div>
         <div className="aboutcomp-section-content aboutcomp-section">
           <h2>Our Story</h2>
           <p>
@@ -20,7 +20,7 @@ const Aboutcomp = () => {
       </div>
 
       <div className="aboutcomp-section-container">
-        <div className="aboutcomp-section-image" style={{backgroundImage: 'url("/api/placeholder/800/600?text=Heritage")'}}></div>
+        <div className="aboutcomp-section-image" style={{backgroundImage: 'url("https://res.cloudinary.com/dfrpcqahh/image/upload/v1731952345/Olkap/Screenshot_18-Nov_23-15-32_32495_ydhfbu.png")'}}></div>
         <div className="aboutcomp-section-content aboutcomp-section aboutcomp-alt">
           <h2>The Beauty of Heritage</h2>
           <p>
@@ -30,7 +30,7 @@ const Aboutcomp = () => {
       </div>
 
       <div className="aboutcomp-section-container">
-        <div className="aboutcomp-section-image" style={{backgroundImage: 'url("/api/placeholder/800/600?text=Our+Craft")'}}></div>
+        <div className="aboutcomp-section-image" style={{backgroundImage: 'url("https://res.cloudinary.com/dfrpcqahh/image/upload/v1731954276/Olkap/49S4YN4C_output_0-removebg-preview_1_k7hhyt.png")'}}></div>
         <div className="aboutcomp-section-content aboutcomp-section">
           <h2>The Heart of Our Craft</h2>
           <p>
