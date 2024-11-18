@@ -50,7 +50,6 @@ const App = () => {
             <About />
             <Recommend />
             <TopPicks />
-            <About />
             <FinalSection />
           </>
         } />
