@@ -168,9 +168,7 @@ body {
 
 @media (max-width: 768px) {
   .scrolled .hero-logo {
-    left: 5%;
     height: 12vh;
-    transform: translate(0%, -50%);
     top: 5.6vh;
   }
 

@@ -10,19 +10,19 @@ const Recommend = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  // Extract the first eight product images
-  const products = data.products.edges.slice(0, 8);
+  // Extract the first four product images
+  const products = data.products.edges.slice(0, 4);
 
   const shopUrl = 'https://kollkap.myshopify.com/products/';
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100 }} // Start completely invisible and below
-      whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
-      viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% of the component is visible
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{
-        duration: 1, // Smooth transition over 1 second
-        ease: [0.25, 0.8, 0.25, 1] // Custom cubic-bezier easing for smoothness
+        duration: 1,
+        ease: [0.25, 0.8, 0.25, 1]
       }}
     >
       <div className="rec_main">
@@ -33,12 +33,12 @@ const Recommend = () => {
           {products.map(({ node }) => (
             <motion.div
               key={node.id}
-              initial={{ opacity: 0, y: 100 }} // Start completely invisible and below
-              whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
-              viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% of the component is visible
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{
-                duration: 1, // Smooth transition over 1 second
-                ease: [0.25, 0.8, 0.25, 1], // Custom cubic-bezier easing for smoothness
+                duration: 1,
+                ease: [0.25, 0.8, 0.25, 1],
               }}
             >
               <div className="recommend-item">

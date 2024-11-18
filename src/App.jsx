@@ -14,7 +14,6 @@ import FinalSection from "./components/final_section/final_section"; // Adjust t
 
 
 const App = () => {
-  window.scrollTo(0, 0);
   const [scrolling, setScrolling] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -29,6 +28,7 @@ const App = () => {
 
   // Toggle menu for mobile view
   const toggleMenu = () => {
+    
     setMenuOpen(!menuOpen);
   };
 
@@ -48,9 +48,11 @@ const App = () => {
           <>
             <Hero />
             <Featured />
+
             <About />
+
             <Recommend />
-            <TopPicks />
+            {/* <TopPicks /> */}
             <FinalSection />
           </>
         } />

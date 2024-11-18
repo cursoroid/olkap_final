@@ -1,59 +1,86 @@
-.final-section {
-    display: flex;
-    justify-content: center;  /* Centers the content horizontally */
-    padding: 20px;
-  }
-  
-  .final-section-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;  /* Set the width of the flex container (adjustable) */
-    padding: 5vh;
-  }
-  
-  .final-section-image {
-    flex: 0 0 30%; /* Image takes 30% of the width */
-  }
-  
-  .final-section-image img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .final-section-text {
-    flex: 0 0 65%; /* Text takes 70% of the width */
-    margin: 60px;
-    margin-right: 100px;
+.final-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh;
+  margin-top: 100px;
+}
+
+.final-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.final-image {
+  width: 40%;
+  object-fit: cover;
+}
+
+.final-text {
+  font-size: 1.3rem;
+  margin-right: 100px;
+  max-width: 60%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.final-text h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+.final-button {
+  position: relative;
+  top: 50px;
+  color: rgb(3, 0, 0);
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.final-button:hover {
+  color: rgb(54, 54, 54);
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .final-container {
+      flex-direction: column;
+      /* Stack the container vertically */
+      margin-top: 30px;
   }
 
-  .final-section-text h2{
-    font-size: 2rem;
-  }
-  
-  .final-section-text h2, .final-section-text h3 {
-    margin: 10px 0;
-    font-weight: 500;
-  }
-  .final-section-text p{
-    margin-top: 40px;
-font-size: 1.3rem;
-  }
-  @media (max-width: 768px) {
-    .final-section-content {
+  .final-content {
       flex-direction: column;
+      /* Stack the content vertically */
       align-items: center;
-      width: 100%; /* Take full width on smaller screens */
-    }
-  
-    .final-section-image {
-      flex: 0 0 100%;
-      margin-bottom: 20px;
-    }
-  
-    .final-section-text {
-      flex: 0 0 100%;
-      padding-left: 0;
-    }
   }
-  
+
+  .final-image {
+      width: 100%;
+      /* Make the image take full width */
+      margin-bottom: 20px;
+      /* Add space below the image */
+  }
+
+  .final-text {
+      margin-left: 0;
+      /* Remove the left margin */
+      max-width: 100%;
+      /* Allow text to take full width */
+      text-align: center;
+      /* Center the text */
+  }
+
+  .final-button {
+      top: 10px;
+      /* Adjust the top position */
+      font-size: 18px;
+      /* Increase font size for readability */
+  }
+}

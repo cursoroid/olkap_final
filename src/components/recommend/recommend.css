@@ -1,73 +1,108 @@
 .rec_tex h1 {
-    font-weight: normal;
-    margin: 5vh;
-    font-size: 1.5rem;
+  font-weight: normal;
+  margin: 5vh;
+  font-size: 1.5rem;
 }
 
 .recommend-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    grid-template-rows: repeat(2, 1fr); /* 2 rows */
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .recommend-item {
-    position: relative;
-    cursor: pointer; /* Make it look clickable */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center the content */
-  }
-  
-  .product-link {
-    text-decoration: none; /* Remove underline from anchor */
-    color: inherit; /* Inherit color from parent */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .image-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevents image overflow */
-  }
-  
-  .recommend-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fills the container without distortion */
-    transition: transform 0.3s ease-in-out; /* Smooth scaling */
-  }
-  
-  .recommend-item:hover .recommend-image {
-    transform: scale(1.1); /* Zoom on hover */
-  }
-  
-  .product-name {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    font-weight: normal;
-    color: #333;
-    text-overflow: ellipsis;
-    margin-left: 20px;
-    overflow: hidden;
-    white-space: nowrap; /* Prevents long text from wrapping */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+  width: 100%;
+}
+
+.recommend-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  aspect-ratio: 0.9; /* Make the container square (or adjust to any ratio you want) */
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure it takes full height of the container */
+  justify-content: flex-end; /* Align content at the bottom of the container */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Set height to 100% so the image fills the container */
+  overflow: hidden;
+}
+
+.recommend-image {
+  width: 100%;
+  height: 100%; /* Ensures the image fills the container */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  transition: transform 0.3s ease-in-out;
+}
+
+.recommend-item:hover .recommend-image {
+  transform: scale(1.1); /* Zoom on hover */
+}
+
+.product-name {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: normal;
+  color: #333;
+  text-overflow: ellipsis;
+  margin-left: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0; /* Hide title by default */
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Ensure title is above the gradient */
+}
+
+.recommend-item:hover .product-name {
+  opacity: 1; /* Show title on hover */
+}
+
+/* Add gradient effect to the bottom of the card */
+.recommend-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%; /* Reduced gradient height */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.recommend-item:hover::after {
+  opacity: 1; /* Show gradient on hover */
+}
 
 .rec-descover {
-    text-align: center;
-    margin: 6vh;
+  text-align: center;
+  margin: 6vh;
 }
 
 .rec-descover a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-    border: 2px solid black;
-    padding: 5px 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  padding: 5px 30px;
+}
+
+/* Media Query for 2x2 grid below 850px */
+@media (max-width: 850px) {
+  .recommend-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
 }
