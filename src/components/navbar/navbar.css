@@ -40,7 +40,7 @@
   .navbar-item {
     text-decoration: none;
     font-weight: 400;
-
+    text-wrap: nowrap;
     font-size: 1.2rem;
     color: black;
     transition: color var(--transition-duration);
@@ -133,10 +133,17 @@
       color: gray;
     }
   }
+
+  @media only screen and (max-width: 1200px){
+    .navbar-item {
+      font-size: 0.9rem;
+    }
+
+  }
   
   @media only screen and (max-width: 992px) {
     .navbar {
-      height: 10vh;
+      height: 15vh;
     }
   
     .navbar-item {
@@ -146,7 +153,7 @@
   
   @media only screen and (max-width: 830px) {
     .navbar {
-      height: 9vh;
+      height: 14vh;
     }
   
     .navbar-item {
@@ -154,3 +161,8 @@
     }
   }
   
+  @media only screen and (max-width: 768px){
+    .navbar {
+      height: 9vh;
+    }
+  }

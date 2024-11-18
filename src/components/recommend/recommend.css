@@ -98,7 +98,15 @@
   color: rgb(0, 0, 0);
   border: 2px solid black;
   padding: 5px 30px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block; /* Ensures scaling works correctly */
+  box-sizing: border-box; /* Makes sure the border is included in the element's dimensions */
 }
+
+.rec-descover a:hover {
+  transform: scale(0.95); /* Scale down on hover */
+}
+
 
 /* Media Query for 2x2 grid below 850px */
 @media (max-width: 850px) {

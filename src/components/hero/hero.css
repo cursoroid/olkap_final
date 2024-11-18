@@ -146,8 +146,8 @@ body {
 
 @media only screen and (max-width: 992px) {
   .scrolled .hero-logo {
-    height: 16vh;
-    top: 6.5vh;
+    height: 9vh;
+    top: 6vh;
   }
 
   .hero_text {
@@ -157,8 +157,7 @@ body {
 
 @media only screen and (max-width: 830px) {
   .scrolled .hero-logo {
-    height: 14vh;
-    top: 6vh;
+    height: 8vh;
   }
 
   .hero_text {
