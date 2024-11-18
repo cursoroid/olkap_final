@@ -25,7 +25,6 @@
     color: inherit; /* Inherit color from parent */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the link content */
   }
   
   .image-container {
