@@ -101,7 +101,7 @@ const Featured = () => {
                                 <img
                                     src={product.node.images.edges[0]?.node.transformedSrc}
                                     alt={product.node.title}
-                                    className="product-image"
+                                    className="product-image-f"
                                 />
                                 <h3 className="product-title">{product.node.title}</h3>
                             </a>

@@ -1,6 +1,4 @@
-.featured-main{
-  width: 100%;
-}
+
 .featured-main h1{
   font-weight: normal;
   margin: 5vh;
@@ -67,7 +65,8 @@
   text-decoration: none;
   border-radius: 2px;
 }
-.product-image {
+.product-image-f {
+  position: relative;
   width: 100%;
   height: auto;
 }
