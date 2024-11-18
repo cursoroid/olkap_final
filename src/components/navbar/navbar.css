@@ -34,12 +34,13 @@
     transform: translateX(-50%);
     gap: 50px; /* Space between center items */
     text-align: center;
-    font-weight: 500;
   }
   
   /* Navbar Item Styles */
   .navbar-item {
     text-decoration: none;
+    font-weight: 400;
+
     font-size: 1.2rem;
     color: black;
     transition: color var(--transition-duration);

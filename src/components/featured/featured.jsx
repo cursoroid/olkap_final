@@ -90,21 +90,24 @@ const Featured = () => {
                         }}
                     >
                         {data?.products.edges.map((product, index) => (
-                            <a
-                                key={product.node.id}
-                                href={`${shopUrl}${product.node.handle}`} // Link to product page
-                                className={`card ${index === currentIndex ? "active" : ""}`}
-                                style={{
-                                    width: `${100 / cardsPerRow}%`, // Dynamically set card width
-                                }}
-                            >
-                                <img
-                                    src={product.node.images.edges[0]?.node.transformedSrc}
-                                    alt={product.node.title}
-                                    className="product-image-f"
-                                />
-                                <h3 className="product-title">{product.node.title}</h3>
-                            </a>
+                           <a
+                           key={product.node.id}
+                           href={`${shopUrl}${product.node.handle}`} // Link to product page
+                           className={`card ${index === currentIndex ? "active" : ""}`}
+                           style={{
+                               width: `${100 / cardsPerRow}%`, // Dynamically set card width
+                           }}
+                       >
+                           <div className="product-image-container">
+                               <img
+                                   src={product.node.images.edges[0]?.node.transformedSrc}
+                                   alt={product.node.title}
+                                   className="product-image-f"
+                               />
+                           </div>
+                           <h3 className="product-title">{product.node.title}</h3>
+                       </a>
+                       
                         ))}
                     </div>
                     <button className="next-btn" onClick={nextSlide}>

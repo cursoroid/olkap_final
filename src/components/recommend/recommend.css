@@ -6,53 +6,58 @@
 
 .recommend-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* 4 columns */
-    grid-template-rows: repeat(2, 1fr);
-    /* 2 rows */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
     width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.recommend-item {
+    margin: 0 auto;
+  }
+  
+  .recommend-item {
     position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    /* Make it look clickable */
+    cursor: pointer; /* Make it look clickable */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center the content */
+  }
+  
+  .product-link {
+    text-decoration: none; /* Remove underline from anchor */
+    color: inherit; /* Inherit color from parent */
     display: flex;
     flex-direction: column;
-}
-
-.product-link {
-    text-decoration: none;
-    /* Remove underline from anchor */
-    color: inherit;
-    /* Inherit color from parent */
-    display: flex;
-    flex-direction: column;
-}
-
-.recommend-image {
+    align-items: center; /* Center the link content */
+  }
+  
+  .image-container {
+    position: relative;
     width: 100%;
     height: auto;
-    object-fit: cover;
-    /* Ensures images cover their container without distortion */
-}
-
-.product-name {
-    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents image overflow */
+  }
+  
+  .recommend-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling */
+  }
+  
+  .recommend-item:hover .recommend-image {
+    transform: scale(1.1); /* Zoom on hover */
+  }
+  
+  .product-name {
     margin-top: 10px;
     font-size: 1rem;
     font-weight: normal;
     color: #333;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
-    /* Prevents long text from wrapping */
-    margin-bottom: 25px;
-    padding: 5px;
-}
+    white-space: nowrap; /* Prevents long text from wrapping */
+  }
+  
 
 .rec-descover {
     text-align: center;
