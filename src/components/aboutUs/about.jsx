@@ -24,7 +24,7 @@ const About = () => {
           <h2>THE ART OF METALCRAFT: AN OLKAP LEGACY</h2>
           <p>
           At OLKAP, we transform metal into poetry through a masterful blend of India's rich craftsmanship and contemporary design. Our exquisite accents and lifestyle pieces, crafted with precision and innovative techniques, represent the pinnacle of luxury metalwork, adorning prestigious spaces worldwide.          </p>
-          <a href='' className="about-button">About Us<FontAwesomeIcon icon={faChevronRight} /></a>
+          <a href='' className="about-button">About Us<FontAwesomeIcon className='go-to' icon={faChevronRight} /></a>
         </div>
       </div>
     </div>

@@ -4,6 +4,11 @@ import { faChevronRight, faBars, faTimes } from '@fortawesome/free-solid-svg-ico
 import { ShoppingBag, User } from 'lucide-react';
 import './navbar.css';
 
+import 'material-icons/iconfont/material-icons.css';
+import 'material-symbols';
+
+
+
 const Navbar = ({ scrolling, menuOpen, toggleMenu }) => {
 
   return (
@@ -21,8 +26,13 @@ const Navbar = ({ scrolling, menuOpen, toggleMenu }) => {
       </div>
 
       <div className="navbar-right">
-        <a href="/cart" className="navbar-item cart"><ShoppingBag /></a>
-        <a href="/profile" className="navbar-item user"><User /></a>
+        <a href="/cart" className="navbar-item cart"><span class="material-symbols-outlined">
+          shopping_bag
+        </span></a>
+        <a href="/profile" className="navbar-item user"><span class="material-symbols-outlined">
+person
+</span></a>
+
       </div>
 
       {/* Hamburger Icon */}

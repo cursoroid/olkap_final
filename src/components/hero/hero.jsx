@@ -5,6 +5,9 @@ import bg2 from '../../assets/bg2.jpg';
 import bg3 from '../../assets/bg3.jpg';
 import './hero.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 const Hero = () => {
   const [scrolling, setScrolling] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
@@ -62,7 +65,7 @@ const Hero = () => {
             </div>
           )}
           <a href="/shop" className="shop-button">
-            Shop Now
+            Shop Now<FontAwesomeIcon className='go-to' icon={faChevronRight} />
           </a>
         </div>
       </div>
