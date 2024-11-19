@@ -24,19 +24,19 @@ const Footer = () => {
           ease: [0.25, 0.8, 0.25, 1] // Custom cubic-bezier easing for smoothness
         }}
       >
-    <footer className="footer bg-white dark:bg-dark">
+    <footer className="footer bg">
       <div className="container mx-auto">
         <div className="footer-row">
           {/* Logo and About Section */}
           <div className="footer-column">
             <a href="#" className="footer-logo">
               <img
-                src="./src/assets/flogow.svg"
+                src="./src/assets/flogod.svg"
                 alt="logo"
                 className="logo-light"
               />
               <img
-                src="./src/assets/flogod.svg"
+                src="./src/assets/flogow.svg"
                 alt="logo-dark"
                 className="logo-dark"
               />
