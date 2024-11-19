@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
-
 .container{
   margin: vh;
 }
@@ -8,7 +6,6 @@
   padding: 5vh 0;
   background: #000000;
   color: #ffffff;
-  font-family: 'Cormorant Garamond', serif;
   margin-top: 100px;
 }
 
@@ -57,14 +54,10 @@
   color: #ffffff;
 }
 
-.social-text {
-  font-family: 'Cormorant Garamond', serif !important;
-}
 
 .footer-heading {
   margin-bottom: 20px;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.3rem;
   letter-spacing: 0.5px;
 }
@@ -82,9 +75,8 @@
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s;
-  font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .footer-links a:hover {
@@ -110,9 +102,8 @@
   text-decoration: none;
   color: #ffffff;
   transition: color 0.3s;
-  font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .social-link:hover {
