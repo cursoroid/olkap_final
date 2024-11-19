@@ -58,7 +58,7 @@ const Recommend = () => {
         </div>
 
         <div className="rec-descover">
-          <a href="#">Discover More</a>
+          <a href="https://kollkap.myshopify.com/collections/all">Discover More</a>
         </div>
       </div>
     </motion.div>

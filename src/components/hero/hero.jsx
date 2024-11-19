@@ -64,7 +64,7 @@ const Hero = () => {
               ))}
             </div>
           )}
-          <a href="/shop" className="shop-button">
+          <a href="https://kollkap.myshopify.com/collections/all" className="shop-button">
             Shop Now<FontAwesomeIcon className='go-to' icon={faChevronRight} />
           </a>
         </div>
