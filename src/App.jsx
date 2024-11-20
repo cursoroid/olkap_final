@@ -11,6 +11,7 @@ import Footer from './components/footer/footer';
 import TopPicks from "./components/top-picks/top-picks";
 import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx"
 import FinalSection from "./components/final_section/final_section"; // Adjust the path as necessary
+import NotFound from './components/notfound/notfound.jsx';
 
 
 const App = () => {
@@ -44,7 +45,7 @@ const App = () => {
     <>
       <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
       <Routes>
-        <Route path="/" element={
+        <Route path="/home" element={
           <>
             <Hero />
             <Featured />
@@ -57,6 +58,8 @@ const App = () => {
           </>
         } />
         <Route path="/about" element={<Aboutcomp />} />
+        {/* Fallback route for undefined paths */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
