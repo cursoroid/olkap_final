@@ -8,7 +8,16 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+
+
+
+
 const SPECIFIC_PRODUCTS = ["Coral", "Sunburst"]; // Replace with desired product names
+
+
+
+
+
 const shopUrl = 'https://kollkap.myshopify.com/products/';
 
 const TopPicks = () => {
@@ -59,7 +68,7 @@ const TopPicks = () => {
               target="_blank" // Open in a new tab
               rel="noopener noreferrer" // Security measure
             >
-              Shop Now <FontAwesomeIcon icon={faChevronRight} />
+              Shop Now <FontAwesomeIcon className="go-to" icon={faChevronRight} />
             </a>
           </div>
         </div>
