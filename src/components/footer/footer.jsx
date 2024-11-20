@@ -93,9 +93,9 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="social-link">
+                  <a href="#" className="social-link address-icon">
                     <FontAwesomeIcon icon={faLocationDot} />
-                    <span className="social-text">Tower 1, City Point, Boat Club Rd, Pune - 411001</span>
+                    <span className="social-text address-icon">Tower 1, City Point, Boat Club Rd, Pune - 411001</span>
                   </a>
                 </li>
               </ul>
