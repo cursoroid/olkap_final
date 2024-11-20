@@ -6,7 +6,7 @@ function NotFound() {
   const navigate = useNavigate();
 
   const goHome = () => {
-    navigate("/home"); // Adjust the path as per your routes
+    navigate("/"); // Adjust the path as per your routes
   };
 
   return (

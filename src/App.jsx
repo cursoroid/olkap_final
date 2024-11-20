@@ -45,7 +45,7 @@ const App = () => {
     <>
       <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
       <Routes>
-        <Route path="/home" element={
+        <Route path="/" element={
           <>
             <Hero />
             <Featured />
