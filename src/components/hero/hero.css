@@ -144,7 +144,7 @@ body {
   /* Adds space between the text and the icon */
 }
 
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
   .scrolled .hero-logo {
     height: 9vh;
     top: 6vh;
@@ -153,10 +153,11 @@ body {
   .hero_text {
     font-size: 3.5rem;
   }
-}
+} */
 
 @media only screen and (max-width: 830px) {
   .scrolled .hero-logo {
+    top: 5.8vh;
     height: 8vh;
   }
 

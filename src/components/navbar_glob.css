@@ -13,7 +13,21 @@
     z-index: 2;
     transition: opacity var(--transition-duration) ease;
   }
+  .navbar-glob-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
+  .navbar-glob-logo img {
+    top: 5vh;
+    height: 3.9vh;
+    position: fixed;
+    left: 50%;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+   
   .navbar-glob-center {
     display: flex;
     position: absolute;
@@ -26,7 +40,11 @@
 
   .navbar-glob-item{
     text-decoration: none;
+    font-weight: 400;
+    text-wrap: nowrap;
+    font-size: 1.1rem;
     color: black;
+    transition: color var(--transition-duration);
   }
   
   .navbar-glob-right {
@@ -46,7 +64,6 @@
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    padding-top: 14vh;
     box-sizing: border-box;
     transition: right 0.3s ease-in-out; /* Smooth sliding transition */
     z-index: 5;
@@ -71,6 +88,8 @@
     border: none;
     cursor: pointer;
     width: 100%;
+    margin-top: 20px;
+
   }
   
   .side-menu-glob-item:hover {
@@ -93,11 +112,11 @@
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    font-weight: normal;
+    font-weight: 300;
     transition: background-color 0.3s;
   }
   
@@ -117,6 +136,19 @@
   .hamburger-glob.open {
     transform: rotate(180deg);
     font-size: 3.2vh;
+  }
+
+  @media only screen and (max-width: 830px){
+    .navbar-glob{
+      height: 13vh;
+    }
+    .navbar-glob-item{
+      font-size: 0.9rem;
+
+    }
+    .material-symbols-outlined{
+      font-size: 1.2rem !important;
+    }
   }
   
   @media (max-width: 768px) {
@@ -138,6 +170,12 @@
   
     .side-menu-glob.open {
       right: 0; /* Side menu will be visible when open */
+    }
+    .navbar-glob {
+      height: 9vh;
+    }
+    .material-symbols-outlined{
+      font-size: 1.5rem !important;
     }
   }
   

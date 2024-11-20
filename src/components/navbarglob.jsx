@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './navbar_glob.css';
 import 'material-symbols';
+import logo from '../assets/global_logo.svg'; // Import the logo
 
 const NavbarGlob = () => {
   const [menuOpen, setMenuOpen] = useState(false);  // Track the state of the side menu
@@ -24,12 +25,17 @@ const NavbarGlob = () => {
     <div className="navbar-glob">
       <div className="navbar-glob-left"></div>
 
+      {/* Logo */}
+      <div className="navbar-glob-logo">
+        <img src={logo} alt="Shop Logo" />
+      </div>
+
       {/* Center options */}
       <div className="navbar-glob-center">
-        <a href={`https://${shopName}`} className="navbar-glob-item">SHOP</a>
-        <a href="/" className="navbar-glob-item">FURNITURE</a>
-        <a href="/" className="navbar-glob-item">DECOR</a>
-        <a href="/" className="navbar-glob-item">GALLERY</a>
+        <a href={`https://${shopName}`} className="navbar-glob-item">Shop</a>
+        <a href="/" className="navbar-glob-item">Furniture</a>
+        <a href="/" className="navbar-glob-item">Decor</a>
+        <a href="/" className="navbar-glob-item">Gallery</a>
       </div>
 
       <div className="navbar-glob-right">
@@ -51,14 +57,14 @@ const NavbarGlob = () => {
 
       {/* Sliding Menu */}
       <div className={`side-menu-glob ${menuOpen ? 'open' : ''}`}>
-        <a href={`https://${shopName}`} className="side-menu-glob-item">SHOP</a>
-        <a href="/" className="side-menu-glob-item">FURNITURE</a>
-        <a href="/" className="side-menu-glob-item">DECOR</a>
-        <a href="/" className="side-menu-glob-item">GALLERY</a>
+        <a href={`https://${shopName}`} className="side-menu-glob-item">Shop</a>
+        <a href="/" className="side-menu-glob-item">Furniture</a>
+        <a href="/" className="side-menu-glob-item">Decor</a>
+        <a href="/" className="side-menu-glob-item">Gallery</a>
         <div className="login-container-glob">
           <button onClick={handleProfileClick} className="side-menu-glob-item">
             <span className="material-symbols-outlined">person</span>
-            PROFILE
+            Log In / Register
           </button>
         </div>
       </div>

@@ -41,10 +41,12 @@
     text-decoration: none;
     font-weight: 400;
     text-wrap: nowrap;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: black;
     transition: color var(--transition-duration);
+    text-transform: capitalize;          
   }
+
   
   .navbar-item:hover {
     color: gray;
@@ -60,10 +62,9 @@
   }
 
   .material-symbols-outlined{
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
     position: absolute;
     bottom: 10px; /* Adjust for spacing from the bottom */
-
   }
   
   /* Hamburger Icon */
@@ -91,11 +92,11 @@
     bottom: 0;
     align-items: center; /* Vertically align items */
   }
-  .login-container span{
-    margin: 0;
-    padding: 0;
-  }
+
   @media (max-width: 768px) {
+    .navbar {
+      height: 9vh !important;
+    }
     .material-symbols-outlined{
       bottom: auto;
       position: relative;
@@ -119,20 +120,24 @@
       top: 2.8vh;
       z-index: 10;
     }
+    .material-symbols-outlined{
+      font-size: 1rem !important;
+    }
+    
   
 /* Side Menu */
 .side-menu {
   position: fixed;
   top: 0;
-  right: 100%; /* Initially hidden */
+  padding-top: 9vh; /* Adjust padding to fit content under the navbar */
+  right: 100%; /* Initially off-screen */
   width: 100%;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  padding-top: 14vh; /* Start options just below the navbar */
-  box-sizing: border-box; /* Include padding in height calculation */
-  transition: right 0.3s ease-in-out;
+  box-sizing: border-box;
+  transition: right 0.3s ease-in-out; /* Smooth sliding transition */
   z-index: 5;
 }
 
@@ -150,6 +155,7 @@
   font-weight: 500;
   padding: 10px 20px;
   transition: color 0.3s;
+  margin-top: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -176,7 +182,8 @@
   color: #fff;
   border: none;
   padding: 10px 20px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 300;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
@@ -189,36 +196,28 @@
 }
 
   }
-
-  @media only screen and (max-width: 1200px){
-    .navbar-item {
-      font-size: 0.9rem;
-    }
-
-  }
   
-  @media only screen and (max-width: 992px) {
+  /* @media only screen and (max-width: 992px) {
     .navbar {
-      height: 15vh;
+      height: 13vh;
     }
   
     .navbar-item {
       font-size: 1rem;
     }
-  }
+  } */
   
   @media only screen and (max-width: 830px) {
     .navbar {
-      height: 14vh;
+      height: 13vh;
     }
   
     .navbar-item {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .material-symbols-outlined{
+      font-size: 1.2rem !important;
     }
   }
   
-  @media only screen and (max-width: 768px){
-    .navbar {
-      height: 9vh;
-    }
-  }

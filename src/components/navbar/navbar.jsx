@@ -21,10 +21,10 @@ const Navbar = ({ scrolling, menuOpen, toggleMenu }) => {
 
       {/* Center options */}
       <div className="navbar-center">
-        <a href={`https://${shopName}`} className="navbar-item">SHOP</a>
-        <a href="/" className="navbar-item">FURNITURE</a>
-        <a href="/" className="navbar-item">DECOR</a>
-        <a href="/" className="navbar-item">GALLERY</a>
+        <a href={`https://${shopName}`} className="navbar-item">Shop</a>
+        <a href="/" className="navbar-item">Furniture</a>
+        <a href="/" className="navbar-item">Decor</a>
+        <a href="/" className="navbar-item">Gallery</a>
       </div>
 
       <div className="navbar-right">
@@ -46,13 +46,13 @@ const Navbar = ({ scrolling, menuOpen, toggleMenu }) => {
 
       {/* Sliding Menu */}
       <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
-        <a href={`https://${shopName}`} className="side-menu-item">SHOP</a>
-        <a href="/" className="side-menu-item">FURNITURE</a>
-        <a href="/" className="side-menu-item">DECOR</a>
-        <a href="/" className="side-menu-item">GALLERY</a>
+        <a href={`https://${shopName}`} className="side-menu-item">Shop</a>
+        <a href="/" className="side-menu-item">Furniture</a>
+        <a href="/" className="side-menu-item">Decor</a>
+        <a href="/" className="side-menu-item">Gallary</a>
         <div className="login-container">
           <button onClick={handleProfileClick} className="side-menu-item">          <span className="material-symbols-outlined">person</span>
-            PROFILE</button>
+          Log In / Register</button>
         </div>
       </div>
     </div>
