@@ -12,6 +12,7 @@ import TopPicks from "./components/top-picks/top-picks";
 import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx";
 import FinalSection from "./components/final_section/final_section"; // Adjust the path as necessary
 import NotFound from './components/notfound/notfound.jsx';
+import DynamicGallery from './components/dynamicgallery/dynamicgallery.jsx';
 
 const App = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -43,7 +44,7 @@ const App = () => {
   return (
     <>
       {/* Conditionally render Navbar based on the current route */}
-      {location.pathname !== '/about' && (
+      {location.pathname !== '/about' && location.pathname !== '/gallery' &&(
         <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
       )}
 
@@ -59,6 +60,7 @@ const App = () => {
           </>
         } />
         <Route path="/about" element={<Aboutcomp />} />
+        <Route path="/gallery" element={<DynamicGallery />} />
         {/* Fallback route for undefined paths */}
         <Route path="*" element={<NotFound />} />
       </Routes>

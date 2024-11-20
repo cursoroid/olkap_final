@@ -24,7 +24,7 @@ const Navbar = ({ scrolling, menuOpen, toggleMenu }) => {
         <a href={`https://${shopName}`} className="navbar-item">Shop</a>
         <a href="/" className="navbar-item">Furniture</a>
         <a href="/" className="navbar-item">Decor</a>
-        <a href="/" className="navbar-item">Gallery</a>
+        <a href="/gallery" className="navbar-item">Gallery</a>
       </div>
 
       <div className="navbar-right">
