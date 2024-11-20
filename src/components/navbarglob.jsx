@@ -27,7 +27,7 @@ const NavbarGlob = () => {
 
       {/* Logo */}
       <div className="navbar-glob-logo">
-        <img src={logo} alt="Shop Logo" />
+        <a href='/'><img src={logo} alt="Shop Logo" /></a>
       </div>
 
       {/* Center options */}
