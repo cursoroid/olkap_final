@@ -62,7 +62,7 @@ const Featured = () => {
     if (error) return <div>Error: {error.message}</div>;
 
     // Base URL of your Shopify store (replace this with your actual Shopify domain)
-    const shopUrl = 'https://kollkap.myshopify.com/products/';
+    const shopUrl = 'https://0gcq3v-wh.myshopify.com/products/';
 
     return (
 

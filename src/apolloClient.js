@@ -3,9 +3,9 @@ import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://kollkap.myshopify.com/api/2023-10/graphql.json', // Replace with your store's API URL
+    uri: 'https://0gcq3v-wh.myshopify.com//api/2023-10/graphql.json',
     headers: {
-      'X-Shopify-Storefront-Access-Token': 'a0e854bda56c30ae89a24dec4ecd69e5', // Replace with your generated token
+      'X-Shopify-Storefront-Access-Token': 'bcb58f6d9a649c7b4e39f359a91eb716', // Replace with your generated token
     },
   }),
   cache: new InMemoryCache(),

@@ -23,6 +23,11 @@
     gap: 50px;
     text-align: center;
   }
+
+  .navbar-glob-item{
+    text-decoration: none;
+    color: black;
+  }
   
   .navbar-glob-right {
     display: flex;
