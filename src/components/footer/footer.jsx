@@ -10,6 +10,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import "./footer.css";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -99,10 +100,8 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </div>
-
-          {/* Newsletter Section */}
-          <div className="newsletter-container">
+            <div className="footer-column">
+            
             <div className="newsletter-content">
               <h4 className="footer-heading">Subscribe to Our Newsletter</h4>
               <p className="newsletter-description">Stay updated with our latest news and offers!</p>
@@ -119,8 +118,13 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
+            
+          </div>
             </div>
           </div>
+
+          {/* Newsletter Section */}
+          
         </div>
       </footer>
     </motion.div>
