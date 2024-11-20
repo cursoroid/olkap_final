@@ -1,6 +1,8 @@
 import React from 'react';
 import './aboutcomp.css';
 import { motion } from "framer-motion";
+import Navbarglob from "../navbarglob";
+
 
 const AboutSection = ({ title, description, imageSrc, reverseLayout }) => {
   return (
@@ -27,6 +29,7 @@ const AboutSection = ({ title, description, imageSrc, reverseLayout }) => {
 const Aboutcomp = () => {
   return (
     <div className="about-page">
+      <Navbarglob/>
       {/* Page heading */}
       <motion.h1
         className="page-heading"

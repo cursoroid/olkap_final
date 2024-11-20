@@ -51,10 +51,12 @@ const Navbar = ({ scrolling, menuOpen, toggleMenu }) => {
         <a href="/" className="side-menu-item">DECOR</a>
         <a href="/" className="side-menu-item">GALLERY</a>
         <div className="login-container">
-          <button onClick={handleProfileClick} className="side-menu-item">LOGIN</button>
+          <button onClick={handleProfileClick} className="side-menu-item">          <span className="material-symbols-outlined">person</span>
+            PROFILE</button>
         </div>
       </div>
     </div>
+
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import { Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation
 import './App.css';
 
 import Navbar from './components/navbar/navbar';
@@ -9,13 +9,13 @@ import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
 import TopPicks from "./components/top-picks/top-picks";
-import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx"
+import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx";
 import FinalSection from "./components/final_section/final_section"; // Adjust the path as necessary
-
 
 const App = () => {
   const [scrolling, setScrolling] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation(); // Get current path using useLocation()
 
   // Handle scroll effect
   const handleScroll = () => {
@@ -28,7 +28,6 @@ const App = () => {
 
   // Toggle menu for mobile view
   const toggleMenu = () => {
-    
     setMenuOpen(!menuOpen);
   };
 
@@ -42,15 +41,17 @@ const App = () => {
 
   return (
     <>
-      <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      {/* Conditionally render Navbar based on the current route */}
+      {location.pathname !== '/about' && (
+        <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      )}
+
       <Routes>
         <Route path="/" element={
           <>
             <Hero />
             <Featured />
-
             <About />
-
             <Recommend />
             {/* <TopPicks /> */}
             <FinalSection />
@@ -58,6 +59,7 @@ const App = () => {
         } />
         <Route path="/about" element={<Aboutcomp />} />
       </Routes>
+
       <Footer />
     </>
   );
