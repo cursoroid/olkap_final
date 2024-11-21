@@ -30,6 +30,8 @@
     display: flex;
     position: absolute;
     bottom: 10px; /* Adjust for spacing from the bottom */
+    justify-content: center;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
     gap: 50px; /* Space between center items */
@@ -221,3 +223,50 @@
     }
   }
   
+
+  /* Mega Menu Styles */
+/* Mega Menu Styles */
+.mega-menu-parent {
+  position: relative;
+}
+
+.mega-menu {
+  position: fixed;
+  left: 0;
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap in rows */
+  gap: 20px; /* Adjust space between blocks */
+  z-index: 10;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+  padding-top: 50px;
+  border-bottom: 1px solid black;
+}
+
+.mega-menu-item {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+  width: calc(20% - 20px); /* Divide the mega menu into 3 equal blocks per row */
+  box-sizing: border-box;
+}
+
+.mega-menu-item:hover {
+  color: gray;
+}
+
+/* Adjust the layout for smaller screens */
+@media (max-width: 768px) {
+  .mega-menu {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .mega-menu-item {
+    width: 100%; /* Items take full width on smaller screens */
+    padding: 10px 0;
+  }
+}
