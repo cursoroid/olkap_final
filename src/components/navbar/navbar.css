@@ -1,272 +1,200 @@
 /* Navbar Container */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 14vh;
-    background-color: white;
-    display: flex;
-    align-items: flex-end; /* Align items to the bottom */
-    justify-content: space-between;
-    opacity: 0;
-    z-index: 2;
-    transition: opacity var(--transition-duration) ease;
-  }
-  
-  .navbar.scrolled {
-    opacity: 1;
-  }
-  
-  /* Navbar Sections */
-  .navbar-right {
-    display: flex;
-    gap: 50px;
-    margin-bottom: 10px; /* Adjust for spacing from the bottom */
-    margin-right: 5vh;
-  }
-  
-  .navbar-center {
-    display: flex;
-    position: absolute;
-    bottom: 10px; /* Adjust for spacing from the bottom */
-    justify-content: center;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 50px; /* Space between center items */
-    text-align: center;
-  }
-  
-  /* Navbar Item Styles */
-  .navbar-item {
-    text-decoration: none;
-    font-weight: 400;
-    text-wrap: nowrap;
-    font-size: 1.1rem;
-    color: black;
-    transition: color var(--transition-duration);
-    text-transform: capitalize;          
-  }
-
-  
-  .navbar-item:hover {
-    color: gray;
-  }
-
-  .cart{
-    z-index: 40;
-  }
-  .user{
-    background-color: transparent;
-    outline: none;
-    border: none;
-  }
-
-  .material-symbols-outlined{
-    font-size: 1.4rem !important;
-    position: absolute;
-    bottom: 10px; /* Adjust for spacing from the bottom */
-  }
-  
-  /* Hamburger Icon */
-  .hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 2.5vh;
-    transition: transform 0.3s ease;
-    margin-right: 5%;
-  }
-  
-  .hamburger.open {
-    transform: rotate(180deg);
-    font-size: 3.2vh;
-    /* Animation for rotating the hamburger to cross */
-  }
-  
-  /* Side Menu */
-  .side-menu {
-    display: none;
-  }
-
-  .login-container{
-    position: absolute;
-    bottom: 0;
-    align-items: center; /* Vertically align items */
-  }
-
-  @media (max-width: 768px) {
-    .navbar {
-      height: 9vh !important;
-    }
-    .material-symbols-outlined{
-      bottom: auto;
-      position: relative;
-    }
-    .user {
-      display: none;
-    }
-    .navbar-center{
-      display: none;
-    }
-    .cart{
-      position: absolute;
-      top: 3vh;
-      right: 3vh;
-    }
-  
-    .hamburger {
-      display: block;
-      position: absolute;
-      left: 20px;
-      top: 2.8vh;
-      z-index: 10;
-    }
-    .material-symbols-outlined{
-      font-size: 1rem !important;
-    }
-    
-  
-/* Side Menu */
-.side-menu {
   position: fixed;
   top: 0;
-  padding-top: 9vh; /* Adjust padding to fit content under the navbar */
-  right: 100%; /* Initially off-screen */
-  width: 100%;
-  height: 100vh;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  transition: right 0.3s ease-in-out; /* Smooth sliding transition */
-  z-index: 5;
-}
-
-.side-menu.open {
-  right: 0; /* Slide in from the right */
-}
-
-.side-menu-item {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Vertically align items */
-  gap: 10px; /* Space between icon and text */
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-  padding: 10px 20px;
-  transition: color 0.3s;
-  margin-top: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-.side-menu-item:hover {
-  background-color: rgba(185, 184, 184, 0.1); /* Add hover effect */
-}
-
-.login-container {
-  margin-top: auto; /* Push login button to the bottom */
-  width: 100% !important; /* Full width of the menu */
-  display: flex;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.login-container button {
-  background-color: #3f3f3f; /* Example button style */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  font-weight: 300;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: normal;
-  transition: background-color 0.3s;
-}
-
-.login-container button:hover {
-  background-color: rgb(74, 74, 74);
-}
-
-  }
-  
-  /* @media only screen and (max-width: 992px) {
-    .navbar {
-      height: 13vh;
-    }
-  
-    .navbar-item {
-      font-size: 1rem;
-    }
-  } */
-  
-  @media only screen and (max-width: 830px) {
-    .navbar {
-      height: 13vh;
-    }
-  
-    .navbar-item {
-      font-size: 0.9rem;
-    }
-
-    .material-symbols-outlined{
-      font-size: 1.2rem !important;
-    }
-  }
-  
-
-  /* Mega Menu Styles */
-/* Mega Menu Styles */
-.mega-menu-parent {
-  position: relative;
-}
-
-.mega-menu {
-  position: fixed;
   left: 0;
-  background: rgb(255, 255, 255);
-  padding: 20px;
+  width: 100%;
+  height: 14vh;
+  background-color: white;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap in rows */
-  gap: 20px; /* Adjust space between blocks */
-  z-index: 10;
-  width: 100vw;
+  align-items: center;
+  justify-content: space-between;  /* This will push items to opposite sides */
+  opacity: 0;
+  z-index: 2;
   transition: opacity 0.3s ease;
-  padding-top: 50px;
-  border-bottom: 1px solid black;
+}
+
+.navbar.scrolled {
+  opacity: 1;
+}
+
+/* Navbar Sections */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 10px;
+  margin-right: 5vh;
+}
+
+.navbar-center {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  justify-content: center;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 50px;
+  text-align: center;
+}
+
+/* Navbar Item Styles */
+.navbar-item {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: black;
+  transition: color 0.3s ease;
+  text-transform: capitalize;
+}
+
+.navbar-item:hover {
+  color: gray;
+}
+
+.cart {
+  z-index: 40;
+}
+
+.user {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.material-symbols-outlined {
+  font-size: 1.4rem !important;
+  position: absolute;
+  bottom: 10px;
+}
+
+/* Mega Menu */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
 }
 
 .mega-menu-item {
+  font-size: 1.1rem;
   text-decoration: none;
-  font-size: 1rem;
   color: black;
-  padding: 10px 20px;
-  transition: color 0.3s ease;
-  width: calc(20% - 20px); /* Divide the mega menu into 3 equal blocks per row */
-  box-sizing: border-box;
+  display: block;
 }
 
 .mega-menu-item:hover {
   color: gray;
 }
 
-/* Adjust the layout for smaller screens */
-@media (max-width: 768px) {
-  .mega-menu {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 2.9vh;
+  left: 20px;  /* Positioned on the left side */
+  z-index: 1100;  /* Ensure it's on top of the side menu */
+}
+
+.hamburger.open {
+  transform: rotate(180deg);
+  font-size: 3.2vh;
+}
+
+/* Cart Icon Positioned on the Right */
+.cart {
+  cursor: pointer;
+  font-size: 2.5vh;
+  z-index: 1100;
+  margin-right: 20px;  /* Adjusts the position of the cart on the right */
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  padding-top: 10vh !important;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding-top: 20px;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu-item {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.side-menu-item:hover {
+  background-color: #f4f4f4;
+}
+
+.side-menu-title {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.side-menu-collapse {
+  padding-left: 20px;
+  display: none;
+}
+
+.side-menu-collapse a {
+  font-size: 1rem;
+  display: block;
+}
+
+.side-menu-item:hover .side-menu-collapse {
+  display: block;
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .navbar-center {
+    display: none;
   }
 
-  .mega-menu-item {
-    width: 100%; /* Items take full width on smaller screens */
-    padding: 10px 0;
+  .navbar{
+    height: 9vh;
   }
+
+  .hamburger {
+    display: block;
+  }
+
+  .side-menu-item {
+    font-size: 1.1rem;
+  }
+
+  .user {
+    display: none;
+  }
+  .material-symbols-outlined{
+    position: absolute;
+    top: 2.9vh;
+    right: 20px;
+    font-size: 1.2rem !important;
+    z-index: 20;
+ }
 }
