@@ -39,12 +39,12 @@ const Footer = () => {
             <div className="footer-column">
               <a href="#" className="footer-logo">
                 <img
-                  src="./src/assets/flogod.svg"
+                  src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/fLOGOd.svg?updatedAt=1732295584003"
                   alt="logo"
                   className="logo-light"
                 />
                 <img
-                  src="./src/assets/flogow.svg"
+                  src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/fLOGOw.svg?updatedAt=1732295586190"
                   alt="logo-dark"
                   className="logo-dark"
                 />

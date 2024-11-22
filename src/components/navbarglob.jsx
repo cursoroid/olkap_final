@@ -42,7 +42,7 @@ const Navbarglob = () => {
       <div className="navbar-main">
         {/* Logo - Centered above the navbar options */}
         <div className="navbar-logo">
-          <a href="/"><img src="./src/assets/global_logo.svg" alt="Logo" className="logo-img" /></a>
+          <a href="/"><img src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/global_logo.svg?updatedAt=1732295586623" alt="Logo" className="logo-img" /></a>
         </div>
 
         {/* Hamburger Icon or Cross Icon */}
