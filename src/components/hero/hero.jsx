@@ -2,9 +2,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './hero.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
 const Hero = () => {
   const [scrolling, setScrolling] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);

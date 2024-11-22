@@ -2,9 +2,6 @@ import React from 'react';
 import './about.css';
 import { motion } from "framer-motion";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
 const About = () => {
   return (
 
@@ -24,7 +21,10 @@ const About = () => {
           <h2>THE ART OF METALCRAFT: AN OLKAP LEGACY</h2>
           <p>
           At OLKAP, we transform metal into poetry through a masterful blend of India's rich craftsmanship and contemporary design. Our exquisite accents and lifestyle pieces, crafted with precision and innovative techniques, represent the pinnacle of luxury metalwork, adorning prestigious spaces worldwide.          </p>
-          <a href='/about' className="about-button">About Us<FontAwesomeIcon className='go-to' icon={faChevronRight} /></a>
+          <br /><br />
+          <a href='/about' className="about-button">About Us<span class="material-symbols-outlined abt-nxt">
+              arrow_forward_ios
+            </span></a>
         </div>
       </div>
     </div>
