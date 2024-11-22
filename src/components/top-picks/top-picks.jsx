@@ -18,7 +18,7 @@ const SPECIFIC_PRODUCTS = ["Coral", "Sunburst"]; // Replace with desired product
 
 
 
-const shopUrl = 'https://kollkap.myshopify.com/products/';
+const shopUrl = 'https://shop.olkap.com/collections/all';
 
 const TopPicks = () => {
   const { data, loading, error } = useQuery(GET_PRODUCTS);

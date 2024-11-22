@@ -98,7 +98,7 @@ body {
 }
 
 .scrolled .hero_text {
-  top: 65%;
+  top: 60%;
   opacity: 1;
 }
 
@@ -106,13 +106,15 @@ body {
 .dots-container {
   position: absolute;
   width: 100%;
-  bottom: 30%;
+  bottom: -50%;
   display: flex;
   justify-content: center;
   gap: 10px;
   opacity: 1;
   transition: opacity var(--transition-duration) ease-in-out;
 }
+
+
 
 .dot {
   height: var(--dot-size);
@@ -131,29 +133,22 @@ body {
 
 /* Button Styles */
 .shop-button {
-  text-decoration: underline;
   color: var(--hero-text-color);
-  font-size: 20px;
-  margin-top: 20%;
+  font-size: 1.3rem;
   vertical-align: middle;
   cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  bottom: 30px;
 }
 
-.shop-button svg {
-  margin-left: 10px;
-  /* Adds space between the text and the icon */
+.nxt{
+  position: relative;
+  top: 4px;
+  margin-left: 5px;
+  font-size: 1.5rem !important;
 }
 
-/* @media only screen and (max-width: 992px) {
-  .scrolled .hero-logo {
-    height: 9vh;
-    top: 6vh;
-  }
-
-  .hero_text {
-    font-size: 3.5rem;
-  }
-} */
 
 @media only screen and (max-width: 830px) {
   .scrolled .hero-logo {
@@ -182,4 +177,33 @@ body {
     height: 10vh;
     top: 4.5vh;
   }
+}
+
+@media only screen and (max-width: 500px){
+  .hero-logo{
+    height: 40vw;
+  }
+  .scrolled .hero_text {
+    top: 60vh;
+}
+.hero_text{
+  font-size: 2.5rem !important;
+}
+:root {
+  --dot-size: 7px;
+}
+.shop-button {
+ 
+  font-size: 1.1rem;
+}
+.nxt{
+  position: relative;
+  top: 3px;
+  margin-left: 5px;
+  font-size: 1.2rem !important;
+}
+.dots-container{
+  bottom: -100%;
+}
+
 }

@@ -13,7 +13,7 @@ const Recommend = () => {
   // Extract the first four product images
   const products = data.products.edges.slice(0, 4);
 
-  const shopUrl = 'https://kollkap.myshopify.com/products/';
+  const shopUrl = 'https://shop.olkap.com/collections/all';
 
   return (
     <motion.div
@@ -58,7 +58,7 @@ const Recommend = () => {
         </div>
 
         <div className="rec-descover">
-          <a href="https://kollkap.myshopify.com/collections/all">Discover More</a>
+          <a href="https://shop.olkap.com/collections/all">Discover More</a>
         </div>
       </div>
     </motion.div>

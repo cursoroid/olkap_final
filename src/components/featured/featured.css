@@ -80,10 +80,10 @@
 
 .product-title {
   margin-bottom: 10px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: black;
   margin-top: 10px;
-  font-weight: 500;
+  font-weight: 400;
   opacity: 0; /* Hide the title by default */
   transition: opacity 0.3s ease; /* Smooth transition for fade-in */
   position: absolute; /* Position title absolutely within the card */
@@ -163,3 +163,6 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+@media only screen and (max-width: 500px){
+  
+}

@@ -116,7 +116,7 @@ const Featured = () => {
                 </div>
 
                 <div className='store-btn'>
-                    <a href="https://kollkap.myshopify.com/collections/all">Store</a>
+                    <a href="https://shop.olkap.com/collections/all">Store</a>
                 </div>
 
                 <motion.div
