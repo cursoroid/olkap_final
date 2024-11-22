@@ -1,158 +1,130 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 import './navbar.css';
-import 'material-symbols';
 
-const Navbar = ({ scrolling }) => {
-  const shopName = "kollkap.myshopify.com"; // Replace with your shop's name
-  const [megaMenuVisible, setMegaMenuVisible] = useState(null);
-  const [sideMenuOpen, setSideMenuOpen] = useState(false);
-  const [collapseState, setCollapseState] = useState({
-    furniture: false,
-    decor: false,
-  });
+const Navbar = () => {
+  const [activeMenu, setActiveMenu] = useState(null); // Track which submenu to show
+  const [sideMenuOpen, setSideMenuOpen] = useState(false); // Track side menu visibility
+  const [openSubMenu, setOpenSubMenu] = useState(null); // Track which submenu is open
 
-  // Refs for detecting click outside
-  const furnitureRef = useRef(null);
-  const decorRef = useRef(null);
-
-  const handleHover = (section) => {
-    setMegaMenuVisible(megaMenuVisible === section ? null : section);
+  const handleMouseEnter = (menu) => {
+    setActiveMenu(menu);
   };
 
-  const handleLeave = () => {
-    setMegaMenuVisible(null);
+  const handleMouseLeave = () => {
+    setActiveMenu(null);
   };
 
   const toggleSideMenu = () => {
-    setSideMenuOpen(!sideMenuOpen);
+    setSideMenuOpen(!sideMenuOpen); // Toggle side menu visibility
   };
 
-  const handleProfileClick = () => {
-    const profileUrl = `https://${shopName}/account`;
-    window.location.href = profileUrl; // Shopify handles login redirection if the user is not logged in
+  const toggleSubMenu = (menu) => {
+    setOpenSubMenu(openSubMenu === menu ? null : menu); // Toggle the visibility of the submenu
   };
-
-  // Toggle collapse for side menu items
-  const toggleCollapse = (section) => {
-    setCollapseState((prevState) => ({
-      ...prevState,
-      [section]: !prevState[section],
-    }));
-  };
-
-  // Handle click outside logic
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (furnitureRef.current && !furnitureRef.current.contains(event.target)) {
-        setCollapseState((prevState) => ({
-          ...prevState,
-          furniture: false,
-        }));
-      }
-      if (decorRef.current && !decorRef.current.contains(event.target)) {
-        setCollapseState((prevState) => ({
-          ...prevState,
-          decor: false,
-        }));
-      }
-    };
-
-    // Add event listener for click events outside the collapse menus
-    document.addEventListener('mousedown', handleClickOutside);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   return (
-    <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
-      <div className="navbar-left"></div>
-
-      {/* Desktop Mega Menu */}
-      <div className="navbar-center">
-        <a href={`https://${shopName}`} className="navbar-item">Shop</a>
-        <div
-          className="navbar-item mega-menu-parent"
-          onMouseEnter={() => handleHover('furniture')}
-          onMouseLeave={handleLeave}
-          ref={furnitureRef} // Added ref for click outside detection
-        >
-          Furniture
-          {megaMenuVisible === 'furniture' && (
-            <div className="mega-menu">
-              <a href="/sofas" className="mega-menu-item">Sofas</a>
-              <a href="/chairs" className="mega-menu-item">Chairs</a>
-              <a href="/tables" className="mega-menu-item">Tables</a>
-            </div>
+    <div className="navbar">
+      <div className="navbar-main">
+        {/* Hamburger Icon or Cross Icon */}
+        <div className={`hamburger-icon ${sideMenuOpen ? 'open' : ''}`} onClick={toggleSideMenu}>
+          {!sideMenuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 12h18M3 6h18M3 18h18"></path>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
           )}
         </div>
+
+        {/* Submenus */}
         <div
-          className="navbar-item mega-menu-parent"
-          onMouseEnter={() => handleHover('decor')}
-          onMouseLeave={handleLeave}
-          ref={decorRef} // Added ref for click outside detection
+          className={`fur-sub-menu sub-menu ${activeMenu === 'furniture' ? 'show' : ''}`}
+          onMouseEnter={() => handleMouseEnter('furniture')}
+          onMouseLeave={handleMouseLeave}
         >
-          Decor
-          {megaMenuVisible === 'decor' && (
-            <div className="mega-menu">
-              <a href="/artwork" className="mega-menu-item">Artwork</a>
-              <a href="/lighting" className="mega-menu-item">Lighting</a>
-              <a href="/vases" className="mega-menu-item">Vases</a>
-            </div>
-          )}
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
         </div>
-        <a href="/gallery" className="navbar-item">Gallery</a>
+        <div
+          className={`dec-sub-menu sub-menu ${activeMenu === 'decor' ? 'show' : ''}`}
+          onMouseEnter={() => handleMouseEnter('decor')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+        </div>
+
+        <div className="navbar-container">
+          {/* Centered options */}
+          <div className="navbar-center">
+            <div className="navbar-option">
+              <a href="#">Shop</a>
+            </div>
+            <div
+              className="navbar-option"
+              onMouseEnter={() => handleMouseEnter('furniture')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <a href="#">Furniture</a>
+            </div>
+            <div
+              className="navbar-option"
+              onMouseEnter={() => handleMouseEnter('decor')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <a href="#">Decor</a>
+            </div>
+            <div className="navbar-option">
+              <a href="#">Gallery</a>
+            </div>
+          </div>
+
+          {/* Right bottom options */}
+          <div className="navbar-right">
+            <div className="navbar-option cart">
+              <a href="#">Cart</a>
+            </div>
+            <div className="navbar-option">
+              <a href="#">Login</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Profile and Cart */}
-      <div className="navbar-right">
-        <a href={`https://${shopName}/cart`} className="navbar-item cart">
-          <span className="material-symbols-outlined">shopping_bag</span>
-        </a>
-
-        {/* Profile Button */}
-        <button className="navbar-item user" onClick={handleProfileClick}>
-          <span className="material-symbols-outlined">person</span>
-        </button>
-      </div>
-
-      {/* Hamburger Icon */}
-      <div className={`hamburger ${sideMenuOpen ? 'open' : ''}`} onClick={toggleSideMenu}>
-        <FontAwesomeIcon icon={sideMenuOpen ? faTimes : faBars} />
-      </div>
-
-      {/* Side Menu for Mobile */}
-      <div className={`side-menu ${sideMenuOpen ? 'open' : ''}`}>
-        <a href={`https://${shopName}`} className="side-menu-item">Shop</a>
-        <div className="side-menu-item">
-          <div className="side-menu-title" onClick={() => toggleCollapse('furniture')}>
+      {/* Side Menu */}
+      <div className={`side-menu-main ${sideMenuOpen ? 'open' : ''}`}>
+        <div className="side-menu">
+          <a className="side-menu-option" href="#">Shop</a>
+          <a className="side-menu-option" href="#" onClick={() => toggleSubMenu('furniture')}>
             Furniture
-          </div>
-          {collapseState.furniture && (
-            <div className="side-menu-collapse">
-              <a href="/sofas" className="side-menu-subitem">Sofas</a>
-              <a href="/chairs" className="side-menu-subitem">Chairs</a>
-              <a href="/tables" className="side-menu-subitem">Tables</a>
+            <div className={`sub-side-menu ${openSubMenu === 'furniture' ? 'show' : ''}`}>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
             </div>
-          )}
-        </div>
-        <div className="side-menu-item">
-          <div className="side-menu-title" onClick={() => toggleCollapse('decor')}>
+          </a>
+          <a className="side-menu-option" href="#" onClick={() => toggleSubMenu('decor')}>
             Decor
-          </div>
-          {collapseState.decor && (
-            <div className="side-menu-collapse">
-              <a href="/artwork" className="side-menu-subitem">Artwork</a>
-              <a href="/lighting" className="side-menu-subitem">Lighting</a>
-              <a href="/vases" className="side-menu-subitem">Vases</a>
+            <div className={`sub-side-menu ${openSubMenu === 'decor' ? 'show' : ''}`}>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
             </div>
-          )}
+          </a>
+          <a className="side-menu-option" href="#">Gallery</a>
         </div>
-        <a href="/gallery" className="side-menu-item">Gallery</a>
       </div>
     </div>
   );

@@ -1,200 +1,165 @@
-/* Navbar Container */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+.navbar-container {
   width: 100%;
   height: 14vh;
   background-color: white;
+  position: fixed;
   display: flex;
-  align-items: center;
-  justify-content: space-between;  /* This will push items to opposite sides */
-  opacity: 0;
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-.navbar.scrolled {
-  opacity: 1;
-}
-
-/* Navbar Sections */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  margin-bottom: 10px;
-  margin-right: 5vh;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 3;
+  top: 0;
 }
 
 .navbar-center {
   display: flex;
+  justify-content: space-around;
+  width: 50%;
+  
+}
+
+.navbar-right {
   position: absolute;
-  bottom: 10px;
-  justify-content: center;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  gap: 50px;
-  text-align: center;
+  right: 20px;
+  display: flex; /* Ensures the options are displayed in a row */
+  gap: 20px; /* Adds space between the options */
 }
 
-/* Navbar Item Styles */
-.navbar-item {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: black;
-  transition: color 0.3s ease;
-  text-transform: capitalize;
-}
-
-.navbar-item:hover {
-  color: gray;
-}
-
-.cart {
-  z-index: 40;
-}
-
-.user {
-  background-color: transparent;
-  outline: none;
-  border: none;
-}
-
-.material-symbols-outlined {
-  font-size: 1.4rem !important;
-  position: absolute;
-  bottom: 10px;
-}
-
-/* Mega Menu */
-.mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  display: flex;
-  gap: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 100%;
-}
-
-.mega-menu-item {
-  font-size: 1.1rem;
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-.mega-menu-item:hover {
-  color: gray;
-}
-
-/* Hamburger Icon */
-.hamburger {
-  display: none;
+.navbar-option {
   cursor: pointer;
-  font-size: 2.5vh;
-  transition: transform 0.3s ease;
-  position: absolute;
-  top: 2.9vh;
-  left: 20px;  /* Positioned on the left side */
-  z-index: 1100;  /* Ensure it's on top of the side menu */
+  transition: background-color 0.3s ease;
+  padding-bottom: 10px;
 }
 
-.hamburger.open {
-  transform: rotate(180deg);
-  font-size: 3.2vh;
+.navbar-option:hover {
+  background-color: #f0f0f0;
 }
 
-/* Cart Icon Positioned on the Right */
-.cart {
-  cursor: pointer;
-  font-size: 2.5vh;
-  z-index: 1100;
-  margin-right: 20px;  /* Adjusts the position of the cart on the right */
-}
 
-/* Side Menu */
-.side-menu {
+.sub-menu {
+  background-color: rgb(158, 158, 158);
   position: fixed;
-  top: 0;
-  padding-top: 10vh !important;
-  left: -100%;
   width: 100%;
-  height: 100%;
-  background-color: white;
-  transition: left 0.3s ease;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  padding-top: 20px;
+  top: -100%; /* Hidden by default */
+  display: flex; /* Ensures the items are aligned properly */
+  flex-wrap: wrap; /* Allows the options to wrap to the next line if needed */
+  justify-content: center;
+  text-align: center;
+  padding: 10px 0;
+  transition: opacity 0.3s ease, top 0.3s ease;
+  z-index: 3;
 }
 
-.side-menu.open {
-  left: 0;
+.sub-menu.show {
+  top: 14vh; /* Position the submenu just below the navbar */
+  opacity: 1; /* Make it visible */
 }
 
-.side-menu-item {
-  padding: 15px;
+.sub-menu-option {
+  margin: 10px 15px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #000000;
   text-decoration: none;
-  color: black;
-  font-size: 1.2rem;
-  display: block;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
-.side-menu-item:hover {
-  background-color: #f4f4f4;
+.sub-menu-option:hover {
+  background-color: #e0e0e0;
+  color: #333333;
 }
-
-.side-menu-title {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.side-menu-collapse {
-  padding-left: 20px;
+.side-menu-main{
   display: none;
 }
 
-.side-menu-collapse a {
-  font-size: 1rem;
+
+.sub-side-menu {
+  display: none;
+  overflow: hidden;
+  max-height: 0; /* Initially collapsed */
+  transition: max-height 0.3s ease-in-out; /* Smooth collapse */
+}
+.sub-side-menu.show {
   display: block;
+  max-height: 500px; /* Adjust the max height for expanded submenu */
 }
 
-.side-menu-item:hover .side-menu-collapse {
-  display: block;
-}
 
-/* Mobile View */
-@media screen and (max-width: 768px) {
-  .navbar-center {
+@media only screen and (max-width: 768px) {
+  .hamburger-icon {
+    display: flex;
+    position: fixed;
+    left: 5vh;
+    top: 5vh;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+
+  .navbar-option {
     display: none;
   }
 
-  .navbar{
-    height: 9vh;
+  .navbar-container {
+    height: 10vh;
   }
 
-  .hamburger {
+  .sub-menu {
+    display: none;
+  }
+
+  .cart {
     display: block;
   }
 
-  .side-menu-item {
-    font-size: 1.1rem;
+  .side-menu-main {
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    z-index: 999999;
+    background-color: #ffffff;
+    transition: left 0.3s ease-in-out;
+    margin-top: 10vh;
   }
 
-  .user {
-    display: none;
+  .side-menu-main.open {
+    left: 0;
   }
-  .material-symbols-outlined{
-    position: absolute;
-    top: 2.9vh;
-    right: 20px;
-    font-size: 1.2rem !important;
-    z-index: 20;
- }
+
+  .side-menu {
+    width: 100%;
+    height: 90%; /* Adjust the height to allow scrolling */
+    overflow-y: auto; /* Allow scrolling if the content exceeds the height */
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .side-menu-option {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd; /* Optional: add a separator between options */
+  }
+
+  .side-menu-option:hover {
+    background-color: #f0f0f0;
+  }
+
+  .sub-side-menu {
+    margin-left: 20px;
+    display: none; /* Initially hidden */
+    overflow: hidden; /* Hide overflow content when collapsed */
+    transition: max-height 0.3s ease; /* Smooth transition for expanding/collapsing */
+    max-height: 0; /* Initially collapsed */
+  }
+
+  .sub-side-menu.show {
+    display: block; /* Show the submenu */
+    max-height: auto; /* Set a max height when the submenu is visible */
+  }
+
+  .sub-side-menu a {
+    padding-left: 30px; /* Optional: add indentation for sub-menu items */
+  }
 }
