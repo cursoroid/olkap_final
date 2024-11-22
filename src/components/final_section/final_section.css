@@ -20,10 +20,10 @@
 
 .final-text {
   font-size: 1.3rem;
-  margin-right: 100px;
   max-width: 60%;
-  padding: 20px;
-  text-align: justify;
+  padding-right: 60px;
+  text-align: left;
+
 }
 
 .final-text h2 {
@@ -51,36 +51,67 @@
 @media (max-width: 768px) {
   .final-container {
       flex-direction: column;
-      /* Stack the container vertically */
-      margin-top: 30px;
+      margin-top: 60px;
   }
 
   .final-content {
       flex-direction: column;
-      /* Stack the content vertically */
-      align-items: center;
   }
 
   .final-image {
       width: 100%;
-      /* Make the image take full width */
-      margin-bottom: 20px;
-      /* Add space below the image */
+    margin-top: 30px;
   }
 
   .final-text {
       margin-left: 0;
-      /* Remove the left margin */
       max-width: 100%;
-      /* Allow text to take full width */
-      text-align: center;
-      /* Center the text */
+      padding: 20px;
+  }
+  .final-container{
+    margin: 5vh 1vh;
   }
 
-  .final-button {
-      top: 10px;
-      /* Adjust the top position */
-      font-size: 18px;
-      /* Increase font size for readability */
+}
+
+
+@media only screen and (max-width: 1167px) {
+
+  .final-text {
+      font-size: 1.1rem;
+
   }
+
+  .final-text h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+  }
+
+}
+
+@media only screen and (max-width: 923px) {
+
+
+  .final-text {
+    font-size: 1rem;
+
+}
+
+.final-text h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+}
+
+@media only screen and (max-width: 806px) {
+
+
+  .final-text {
+      font-size: 0.9rem;
+
+  }
+
 }

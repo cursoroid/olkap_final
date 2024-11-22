@@ -13,7 +13,7 @@ const Recommend = () => {
   // Extract the first four product images
   const products = data.products.edges.slice(0, 4);
 
-  const shopUrl = 'https://shop.olkap.com/collections/all';
+  const shopUrl = 'https://0gcq3v-wh.myshopify.com/products/';
 
   return (
     <motion.div

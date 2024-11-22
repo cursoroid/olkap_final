@@ -23,7 +23,7 @@
     margin-left: 50px;
     max-width: 60%;
     padding: 20px;
-    text-align: justify;
+    text-align: left;
 }
 
 .about-text h2 {
@@ -33,7 +33,7 @@
 }
 
 .about-button {
-    
+
     position: relative;
     color: rgb(3, 0, 0);
     border: none;
@@ -42,7 +42,8 @@
     font-size: 1.3rem;
     text-decoration: underline;
 }
-.abt-nxt{
+
+.abt-nxt {
     position: relative;
     font-size: 1.5rem !important;
     top: 5px;
@@ -63,9 +64,9 @@
 
     .about-content {
         flex-direction: column;
-        /* Stack the content vertically */
-        align-items: center;
+        margin-bottom: 0px;
     }
+
 
     .about-image {
         width: 100%;
@@ -76,88 +77,76 @@
 
     .about-text {
         margin-left: 0;
-        /* Remove the left margin */
         max-width: 100%;
-        /* Allow text to take full width */
-        text-align: center;
-        /* Center the text */
+        font-size: 1rem !important;
+        text-align: left;
     }
 
     .about-button {
-        top: 10px;
-        /* Adjust the top position */
         font-size: 18px;
-        /* Increase font size for readability */
     }
-    .about-text {
-        font-size: 0.9rem;
-       text-align: left;
+
+    .about-container {
+        margin: 5vh 0;
     }
-    .about-container{
-        margin: 5vh 0.5vh;
-    }
+
 }
 
-@media only screen and (max-width: 1167px){
+@media only screen and (max-width: 1167px) {
 
     .about-text {
         font-size: 1.1rem;
-       
+
     }
-    
+
     .about-text h2 {
         font-size: 1.7rem;
         font-weight: 500;
         margin-bottom: 30px;
     }
-    
+
     .about-button {
         font-size: 1rem;
-        
+
     }
-    .abt-nxt{
+
+    .abt-nxt {
         font-size: 1.1rem !important;
         top: 4px;
     }
 }
 
-@media only screen and (max-width: 923px){
+@media only screen and (max-width: 923px) {
 
-    
+
     .about-text {
         font-size: 1rem;
-       
+
     }
-    
+
     .about-text h2 {
         font-size: 1.5rem;
         font-weight: 500;
         margin-bottom: 30px;
     }
-    
+
     .about-button {
         font-size: 1rem;
-        
+
     }
-    .abt-nxt{
+
+    .abt-nxt {
         font-size: 1.1rem !important;
         top: 4px;
     }
 }
 
-@media only screen and (max-width: 806px){
+@media only screen and (max-width: 806px) {
 
-    
+
     .about-text {
         font-size: 0.9rem;
-       
+
     }
-    
-}
 
-@media only screen and (max-width: 500px){
-
-    
-
-    
 }

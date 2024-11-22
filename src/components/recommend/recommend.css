@@ -49,11 +49,9 @@
 
 .product-name {
   font-size: 1.2rem;
-  margin-bottom: 10px;
   font-weight: normal;
   color: #333;
   text-overflow: ellipsis;
-  margin-left: 20px;
   overflow: hidden;
   font-weight: 400;
   white-space: nowrap;
@@ -77,7 +75,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 20%; /* Reduced gradient height */
+  height: 30%; /* Reduced gradient height */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -116,3 +114,32 @@
       grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
   }
 }
+
+@media (max-width: 768px) {
+  .rec_tex h1{
+    margin: 4vh 20px 20px;
+  }
+  .recommend-item::after {
+  opacity: 1;
+}
+.product-name{
+  opacity: 1;
+}
+
+
+}
+
+@media only screen and (max-width: 500px){
+  
+  .rec_tex h1{
+    font-weight: normal;
+    margin: 4vh 20px 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .product-name{
+   font-size: 1rem;
+  }
+  
+
+  }
