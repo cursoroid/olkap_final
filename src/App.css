@@ -1,0 +1,13 @@
+/* Navbar transition for visibility */
+.navbar-visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide down effect */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar-hidden {
+    opacity: 0;
+    transform: translateY(-100%); /* Slide up effect */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  

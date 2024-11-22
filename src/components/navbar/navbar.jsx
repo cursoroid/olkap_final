@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './navbar.css';
 
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import 'material-symbols';
+
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null); // Track which submenu to show
   const [sideMenuOpen, setSideMenuOpen] = useState(false); // Track side menu visibility
@@ -22,19 +26,27 @@ const Navbar = () => {
     setOpenSubMenu(openSubMenu === menu ? null : menu); // Toggle the visibility of the submenu
   };
 
+  
+
+  const shopName = "shop.olkap.com";
+
+  const handleProfileClick = () => {
+    const profileUrl = `https://${shopName}/account`;
+    const signupUrl = `https://${shopName}/account/register`;
+
+    // Redirect to Shopify profile page
+    window.location.href = profileUrl; // Shopify handles login redirection if the user is not logged in
+  };
+
   return (
     <div className="navbar">
       <div className="navbar-main">
         {/* Hamburger Icon or Cross Icon */}
         <div className={`hamburger-icon ${sideMenuOpen ? 'open' : ''}`} onClick={toggleSideMenu}>
           {!sideMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 12h18M3 6h18M3 18h18"></path>
-            </svg>
+            <MenuIcon style={{ fontSize: 25, fontWeight: 100 }} />  // Display hamburger icon
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+            <CloseIcon style={{ fontSize: 25 }} />  // Display close (X) icon
           )}
         </div>
 
@@ -50,6 +62,7 @@ const Navbar = () => {
           <a href="#" className="sub-menu-option">FOption</a>
           <a href="#" className="sub-menu-option">FOption</a>
         </div>
+
         <div
           className={`dec-sub-menu sub-menu ${activeMenu === 'decor' ? 'show' : ''}`}
           onMouseEnter={() => handleMouseEnter('decor')}
@@ -83,17 +96,21 @@ const Navbar = () => {
               <a href="#">Decor</a>
             </div>
             <div className="navbar-option">
-              <a href="#">Gallery</a>
+              <a href="/gallery">Gallery</a>
             </div>
           </div>
 
           {/* Right bottom options */}
           <div className="navbar-right">
             <div className="navbar-option cart">
-              <a href="#">Cart</a>
+              <a href={`https://${shopName}/cart`}><span class="material-symbols-outlined cart-icon">
+                shopping_bag
+              </span></a>
             </div>
             <div className="navbar-option">
-              <a href="#">Login</a>
+              <a onClick={handleProfileClick}><span class="material-symbols-outlined">
+                person
+              </span></a>
             </div>
           </div>
         </div>
@@ -103,7 +120,7 @@ const Navbar = () => {
       <div className={`side-menu-main ${sideMenuOpen ? 'open' : ''}`}>
         <div className="side-menu">
           <a className="side-menu-option" href="#">Shop</a>
-          <a className="side-menu-option" href="#" onClick={() => toggleSubMenu('furniture')}>
+          <a className="side-menu-option" onClick={() => toggleSubMenu('furniture')}>
             Furniture
             <div className={`sub-side-menu ${openSubMenu === 'furniture' ? 'show' : ''}`}>
               <a href="#" className="side-menu-option">FOption</a>
@@ -113,7 +130,7 @@ const Navbar = () => {
               <a href="#" className="side-menu-option">FOption</a>
             </div>
           </a>
-          <a className="side-menu-option" href="#" onClick={() => toggleSubMenu('decor')}>
+          <a className="side-menu-option" onClick={() => toggleSubMenu('decor')}>
             Decor
             <div className={`sub-side-menu ${openSubMenu === 'decor' ? 'show' : ''}`}>
               <a href="#" className="side-menu-option">DOption</a>
@@ -123,7 +140,12 @@ const Navbar = () => {
               <a href="#" className="side-menu-option">DOption</a>
             </div>
           </a>
-          <a className="side-menu-option" href="#">Gallery</a>
+          <a className="side-menu-option" href="/gallery">Gallery</a>
+        </div>
+        <div className='login-container'>
+          <a onClick={handleProfileClick}><span class="material-symbols-outlined profile">
+            person
+          </span>Login / Register</a>
         </div>
       </div>
     </div>

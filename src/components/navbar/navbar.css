@@ -12,42 +12,57 @@
 
 .navbar-center {
   display: flex;
-  justify-content: space-around;
-  width: 50%;
-  
+  justify-content: center;
+  gap: 5vw;
+  padding-bottom: 10px;
+}
+.navbar-center a{
+  padding-bottom: 10px !important;
 }
 
 .navbar-right {
   position: absolute;
   right: 20px;
   display: flex; /* Ensures the options are displayed in a row */
-  gap: 20px; /* Adds space between the options */
+  gap: 40px; /* Adds space between the options */
+  padding: 0 !important;
 }
 
 .navbar-option {
   cursor: pointer;
   transition: background-color 0.3s ease;
-  padding-bottom: 10px;
+}
+.navbar-option a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+}
+.material-symbols-outlined{
+  font-size: 1.5rem !important;
+  margin-bottom: 10px;
 }
 
-.navbar-option:hover {
-  background-color: #f0f0f0;
+.navbar-option a:hover {
+  color: #404040;
+  text-decoration: u;
 }
 
 
 .sub-menu {
-  background-color: rgb(158, 158, 158);
+  background-color: rgb(226, 226, 226);
   position: fixed;
   width: 100%;
   top: -100%; /* Hidden by default */
-  display: flex; /* Ensures the items are aligned properly */
-  flex-wrap: wrap; /* Allows the options to wrap to the next line if needed */
-  justify-content: center;
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(5, 1fr); /* Exactly 4 items per row */
+  justify-items: center; /* Center items within their grid cells */
   text-align: center;
-  padding: 10px 0;
+  gap: 10px; /* Space between items */
+  padding: 10px; /* Add padding around the grid */
   transition: opacity 0.3s ease, top 0.3s ease;
   z-index: 3;
 }
+
 
 .sub-menu.show {
   top: 14vh; /* Position the submenu just below the navbar */
@@ -57,7 +72,6 @@
 .sub-menu-option {
   margin: 10px 15px;
   padding: 10px 20px;
-  background-color: #ffffff;
   color: #000000;
   text-decoration: none;
   border-radius: 5px;
@@ -65,7 +79,6 @@
 }
 
 .sub-menu-option:hover {
-  background-color: #e0e0e0;
   color: #333333;
 }
 .side-menu-main{
@@ -73,26 +86,39 @@
 }
 
 
-.sub-side-menu {
+.side-menu-main {
   display: none;
-  overflow: hidden;
-  max-height: 0; /* Initially collapsed */
-  transition: max-height 0.3s ease-in-out; /* Smooth collapse */
-}
-.sub-side-menu.show {
-  display: block;
-  max-height: 500px; /* Adjust the max height for expanded submenu */
 }
 
+
+
+@media only screen and (max-width: 830px){
+  .navbar-container{
+    height: 13vh;
+  }
+  .navbar-option a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+  }
+  .material-symbols-outlined{
+    font-size: 1.3rem !important;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .hamburger-icon {
     display: flex;
     position: fixed;
-    left: 5vh;
-    top: 5vh;
+    left: 4vw;
+    top: 4.5vh;
     transform: translateY(-50%);
     z-index: 999;
+  }
+
+  .material-symbols-outlined{
+    font-size: 1.6rem !important;
+   
   }
 
   .navbar-option {
@@ -100,7 +126,7 @@
   }
 
   .navbar-container {
-    height: 10vh;
+    height: 9vh;
   }
 
   .sub-menu {
@@ -120,8 +146,34 @@
     z-index: 999999;
     background-color: #ffffff;
     transition: left 0.3s ease-in-out;
-    margin-top: 10vh;
+    margin-top: 9vh;
   }
+  .login-container {
+    position: absolute;
+    bottom: 9vh;
+    width: 100%;
+    background-color: #e0e0e0;
+    text-align: center; /* Center horizontally */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 10px 0; /* Space around the content */
+  }
+  
+  .login-container a {
+    display: flex; /* Use flexbox for the link itself */
+    align-items: center; /* Center icon and text vertically */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use inherited color */
+    font-size: 16px; /* Adjust text size as needed */
+    gap: 8px; /* Add spacing between the icon and text */
+  }
+  
+  .profile {
+    position: relative;
+    top: 4px;
+  }
+  
 
   .side-menu-main.open {
     left: 0;
@@ -139,7 +191,7 @@
     display: block;
     padding: 15px;
     text-decoration: none;
-    border-bottom: 1px solid #ddd; /* Optional: add a separator between options */
+    color: black;
   }
 
   .side-menu-option:hover {
@@ -147,7 +199,7 @@
   }
 
   .sub-side-menu {
-    margin-left: 20px;
+    margin-top: 10px;
     display: none; /* Initially hidden */
     overflow: hidden; /* Hide overflow content when collapsed */
     transition: max-height 0.3s ease; /* Smooth transition for expanding/collapsing */
@@ -156,12 +208,44 @@
 
   .sub-side-menu.show {
     display: block; /* Show the submenu */
-    max-height: auto; /* Set a max height when the submenu is visible */
+    max-height: 500px; /* Set a max height when the submenu is visible */
   }
 
   .sub-side-menu a {
     padding-left: 30px; /* Optional: add indentation for sub-menu items */
   }
-}
-  
+  .navbar-right {
+    position: fixed;
+    top: 3.5vh;
+  }
 
+  .cart {
+    display: block;
+    align-self: center; /* Ensure cart is centered in its container */
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .navbar-container {
+    height: 7vh;
+  }
+  .login-container{
+    bottom: 7vh;
+  }
+  .hamburger-icon {
+    display: flex;
+    position: fixed;
+    top: 3.7vh;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  .navbar-right {
+    top: 2.3vh;
+  }
+  .cart-icon{
+    font-size: 1.4rem !important;
+  }
+  .side-menu-main{
+    margin-top: 7vh;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation
+import { Routes, Route, useLocation } from 'react-router-dom'; 
 import './App.css';
 
 import Navbar from './components/navbar/navbar';
@@ -10,22 +10,18 @@ import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
 import TopPicks from "./components/top-picks/top-picks";
 import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx";
-import FinalSection from "./components/final_section/final_section"; // Adjust the path as necessary
+import FinalSection from "./components/final_section/final_section"; 
 import NotFound from './components/notfound/notfound.jsx';
 import DynamicGallery from './components/dynamicgallery/dynamicgallery.jsx';
 
 const App = () => {
   const [scrolling, setScrolling] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // Get current path using useLocation()
+  const location = useLocation(); 
 
   // Handle scroll effect
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
+    setScrolling(window.scrollY > 0);
   };
 
   // Toggle menu for mobile view
@@ -43,9 +39,9 @@ const App = () => {
 
   return (
     <>
-      {/* Conditionally render Navbar based on the current route */}
-      {location.pathname !== '/about' && location.pathname !== '/gallery' &&(
-        <Navbar scrolling={scrolling} menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      {/* Conditionally render Navbar based on the scroll state and route */}
+      {scrolling && location.pathname !== '/about' && location.pathname !== '/gallery' && (
+        <Navbar className={scrolling ? 'navbar-visible' : 'navbar-hidden'} menuOpen={menuOpen} toggleMenu={toggleMenu} />
       )}
 
       <Routes>
@@ -55,13 +51,11 @@ const App = () => {
             <Featured />
             <About />
             <Recommend />
-            {/* <TopPicks /> */}
             <FinalSection />
           </>
         } />
         <Route path="/about" element={<Aboutcomp />} />
         <Route path="/gallery" element={<DynamicGallery />} />
-        {/* Fallback route for undefined paths */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 

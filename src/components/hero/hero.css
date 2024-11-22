@@ -176,3 +176,10 @@ body {
     font-size: 3rem;
   }
 }
+
+@media (max-width: 550px) {
+  .scrolled .hero-logo {
+    height: 10vh;
+    top: 4.5vh;
+  }
+}

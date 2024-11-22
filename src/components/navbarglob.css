@@ -1,0 +1,260 @@
+.navbarglob-container {
+    width: 100%;
+    height: 14vh;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 3;
+    top: 0;
+    left: 0;
+  }
+  
+  .navbarglob-center {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    padding-bottom: 10px;
+  }
+  
+  .navbarglob-center a {
+    padding-bottom: 10px !important;
+  }
+  
+  .navbarglob-right {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    gap: 40px;
+    padding: 0 !important;
+  }
+  
+  .navbarglob-option {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbarglob-option a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+  }
+  
+  .navbarglob-material-icons {
+    font-size: 1.5rem !important;
+    margin-bottom: 10px;
+  }
+  
+  .navbarglob-option a:hover {
+    color: #404040;
+    text-decoration: underline;
+  }
+  
+  .navbarglob-sub-menu {
+    background-color: rgb(226, 226, 226);
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: -100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    transition: opacity 0.3s ease, top 0.3s ease;
+    z-index: 3;
+  }
+  
+  .navbarglob-sub-menu.show {
+    top: 14vh;
+    opacity: 1;
+  }
+  
+  .navbarglob-sub-menu-option {
+    margin: 10px 15px;
+    padding: 10px 20px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbarglob-sub-menu-option:hover {
+    color: #333333;
+  }
+  
+  .navbarglob-side-menu-main {
+    display: none;
+  }
+  .navbarglob-hamburger-icon{
+    display: none;
+  }
+  
+  @media only screen and (max-width: 830px) {
+    .navbarglob-container {
+      height: 13vh;
+    }
+  
+    .navbarglob-option a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+    }
+  
+    .navbarglob-material-icons {
+      font-size: 1.3rem !important;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .navbarglob-hamburger-icon {
+      display: flex;
+      position: fixed;
+      left: 4vw;
+      top: 4.5vh;
+      transform: translateY(-50%);
+      z-index: 999;
+    }
+  
+    .navbarglob-material-icons {
+      font-size: 1.6rem !important;
+    }
+  
+    .navbarglob-option {
+      display: none;
+    }
+  
+    .navbarglob-container {
+      height: 9vh;
+    }
+  
+    .navbarglob-sub-menu {
+      display: none;
+    }
+  
+    .navbarglob-cart {
+      display: block;
+    }
+  
+    .navbarglob-side-menu-main {
+      position: fixed;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      left: -100%;
+      top: 0;
+      z-index: 999999;
+      background-color: #ffffff;
+      transition: left 0.3s ease-in-out;
+      margin-top: 9vh;
+    }
+  
+    .navbarglob-login-container {
+      position: absolute;
+      bottom: 9vh;
+      width: 100%;
+      background-color: #e0e0e0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+    }
+  
+    .navbarglob-login-container a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 16px;
+      gap: 8px;
+    }
+  
+    .navbarglob-profile {
+      position: relative;
+      top: 4px;
+    }
+  
+    .navbarglob-side-menu-main.open {
+      left: 0;
+    }
+  
+    .navbarglob-side-menu {
+      width: 100%;
+      height: 90%;
+      overflow-y: auto;
+      padding-top: 10px;
+      box-sizing: border-box;
+    }
+  
+    .navbarglob-side-menu-option {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: black;
+    }
+  
+    .navbarglob-side-menu-option:hover {
+      background-color: #f0f0f0;
+    }
+  
+    .navbarglob-sub-side-menu {
+      margin-top: 10px;
+      display: none;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      max-height: 0;
+    }
+  
+    .navbarglob-sub-side-menu.show {
+      display: block;
+      max-height: 500px;
+    }
+  
+    .navbarglob-sub-side-menu a {
+      padding-left: 30px;
+    }
+  
+    .navbarglob-right {
+      position: fixed;
+      top: 3.5vh;
+    }
+  
+    .navbarglob-cart {
+      display: block;
+      align-self: center;
+    }
+  }
+  
+  @media only screen and (max-width: 550px) {
+    .navbarglob-container {
+      height: 7vh;
+    }
+  
+    .navbarglob-login-container {
+      bottom: 7vh;
+    }
+  
+    .navbarglob-hamburger-icon {
+      display: flex;
+      position: fixed;
+      top: 3.7vh;
+      transform: translateY(-50%);
+      z-index: 999;
+    }
+  
+    .navbarglob-right {
+      top: 2.3vh;
+    }
+  
+    .navbarglob-cart-icon {
+      font-size: 1.4rem !important;
+    }
+  
+    .navbarglob-side-menu-main {
+      margin-top: 7vh;
+    }
+  }
+  
