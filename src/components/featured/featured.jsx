@@ -130,7 +130,7 @@ const Featured = () => {
                 >
 
                     <div className="logo-banner">
-                        <img src="/src/assets/banner-logo.svg" alt="Logo" className="banner-logo" />
+                        <img src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/banner-logo.svg?updatedAt=1732295583719" alt="Logo" className="banner-logo" />
                     </div>
                 </motion.div>
             </div>
