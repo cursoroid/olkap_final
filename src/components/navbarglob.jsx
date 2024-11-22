@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './navbarglob.css';
+import '../components/navbar/navbar.css';
+import "./navbarglob.css";
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -37,10 +38,15 @@ const Navbarglob = () => {
   };
 
   return (
-    <div className="navbarglob">
-      <div className="navbarglob-main">
+    <div className="navbar">
+      <div className="navbar-main">
+        {/* Logo - Centered above the navbar options */}
+        <div className="navbar-logo">
+          <img src="./src/assets/global_logo.svg" alt="Logo" className="logo-img" />
+        </div>
+
         {/* Hamburger Icon or Cross Icon */}
-        <div className={`navbarglob-hamburger-icon ${sideMenuOpen ? 'open' : ''}`} onClick={toggleSideMenu}>
+        <div className={`hamburger-icon ${sideMenuOpen ? 'open' : ''}`} onClick={toggleSideMenu}>
           {!sideMenuOpen ? (
             <MenuIcon style={{ fontSize: 25, fontWeight: 100 }} />  // Display hamburger icon
           ) : (
@@ -50,63 +56,63 @@ const Navbarglob = () => {
 
         {/* Submenus */}
         <div
-          className={`navbarglob-fur-sub-menu navbarglob-sub-menu ${activeMenu === 'furniture' ? 'show' : ''}`}
+          className={`fur-sub-menu sub-menu ${activeMenu === 'furniture' ? 'show' : ''}`}
           onMouseEnter={() => handleMouseEnter('furniture')}
           onMouseLeave={handleMouseLeave}
         >
-          <a href="#" className="navbarglob-sub-menu-option">FOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">FOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">FOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">FOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
+          <a href="#" className="sub-menu-option">FOption</a>
         </div>
 
         <div
-          className={`navbarglob-dec-sub-menu navbarglob-sub-menu ${activeMenu === 'decor' ? 'show' : ''}`}
+          className={`dec-sub-menu sub-menu ${activeMenu === 'decor' ? 'show' : ''}`}
           onMouseEnter={() => handleMouseEnter('decor')}
           onMouseLeave={handleMouseLeave}
         >
-          <a href="#" className="navbarglob-sub-menu-option">DOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">DOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">DOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">DOption</a>
-          <a href="#" className="navbarglob-sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
+          <a href="#" className="sub-menu-option">DOption</a>
         </div>
 
-        <div className="navbarglob-container">
+        <div className="navbar-container">
           {/* Centered options */}
-          <div className="navbarglob-center">
-            <div className="navbarglob-option">
+          <div className="navbar-center">
+            <div className="navbar-option">
               <a href="#">Shop</a>
             </div>
             <div
-              className="navbarglob-option"
+              className="navbar-option"
               onMouseEnter={() => handleMouseEnter('furniture')}
               onMouseLeave={handleMouseLeave}
             >
               <a href="#">Furniture</a>
             </div>
             <div
-              className="navbarglob-option"
+              className="navbar-option"
               onMouseEnter={() => handleMouseEnter('decor')}
               onMouseLeave={handleMouseLeave}
             >
               <a href="#">Decor</a>
             </div>
-            <div className="navbarglob-option">
+            <div className="navbar-option">
               <a href="/gallery">Gallery</a>
             </div>
           </div>
 
           {/* Right bottom options */}
-          <div className="navbarglob-right">
-            <div className="navbarglob-option navbarglob-cart">
-              <a href={`https://${shopName}/cart`}><span class="material-symbols-outlined navbarglob-cart-icon">
+          <div className="navbar-right">
+            <div className="navbar-option cart">
+              <a href={`https://${shopName}/cart`}><span className="material-symbols-outlined cart-icon">
                 shopping_bag
               </span></a>
             </div>
-            <div className="navbarglob-option">
-              <a onClick={handleProfileClick}><span class="material-symbols-outlined">
+            <div className="navbar-option">
+              <a onClick={handleProfileClick}><span className="material-symbols-outlined">
                 person
               </span></a>
             </div>
@@ -115,33 +121,33 @@ const Navbarglob = () => {
       </div>
 
       {/* Side Menu */}
-      <div className={`navbarglob-side-menu-main ${sideMenuOpen ? 'open' : ''}`}>
-        <div className="navbarglob-side-menu">
-          <a className="navbarglob-side-menu-option" href="#">Shop</a>
-          <a className="navbarglob-side-menu-option" onClick={() => toggleSubMenu('furniture')}>
+      <div className={`side-menu-main ${sideMenuOpen ? 'open' : ''}`}>
+        <div className="side-menu">
+          <a className="side-menu-option" href="#">Shop</a>
+          <a className="side-menu-option" onClick={() => toggleSubMenu('furniture')}>
             Furniture
-            <div className={`navbarglob-sub-side-menu ${openSubMenu === 'furniture' ? 'show' : ''}`}>
-              <a href="#" className="navbarglob-side-menu-option">FOption</a>
-              <a href="#" className="navbarglob-side-menu-option">FOption</a>
-              <a href="#" className="navbarglob-side-menu-option">FOption</a>
-              <a href="#" className="navbarglob-side-menu-option">FOption</a>
-              <a href="#" className="navbarglob-side-menu-option">FOption</a>
+            <div className={`sub-side-menu ${openSubMenu === 'furniture' ? 'show' : ''}`}>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
+              <a href="#" className="side-menu-option">FOption</a>
             </div>
           </a>
-          <a className="navbarglob-side-menu-option" onClick={() => toggleSubMenu('decor')}>
+          <a className="side-menu-option" onClick={() => toggleSubMenu('decor')}>
             Decor
-            <div className={`navbarglob-sub-side-menu ${openSubMenu === 'decor' ? 'show' : ''}`}>
-              <a href="#" className="navbarglob-side-menu-option">DOption</a>
-              <a href="#" className="navbarglob-side-menu-option">DOption</a>
-              <a href="#" className="navbarglob-side-menu-option">DOption</a>
-              <a href="#" className="navbarglob-side-menu-option">DOption</a>
-              <a href="#" className="navbarglob-side-menu-option">DOption</a>
+            <div className={`sub-side-menu ${openSubMenu === 'decor' ? 'show' : ''}`}>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
+              <a href="#" className="side-menu-option">DOption</a>
             </div>
           </a>
-          <a className="navbarglob-side-menu-option" href="/gallery">Gallery</a>
+          <a className="side-menu-option" href="/gallery">Gallery</a>
         </div>
-        <div className='navbarglob-login-container'>
-          <a onClick={handleProfileClick}><span class="material-symbols-outlined navbarglob-profile">
+        <div className='login-container'>
+          <a onClick={handleProfileClick}><span className="material-symbols-outlined profile">
             person
           </span>Login / Register</a>
         </div>
