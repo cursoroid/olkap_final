@@ -1,8 +1,5 @@
 // src/components/Hero.jsx
 import React, { useState, useEffect, useCallback } from 'react';
-import bg1 from '../../assets/bg1.jpeg';
-import bg2 from '../../assets/bg2.jpg';
-import bg3 from '../../assets/bg3.jpg';
 import './hero.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +9,11 @@ const Hero = () => {
   const [scrolling, setScrolling] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const bg1 = 'https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/bg1.jpeg?updatedAt=1732295584036';
+  const bg2 = 'https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/bg2.jpg?updatedAt=1732295584778';
+  const bg3 = 'https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/bg3.jpg?updatedAt=1732295584274';
+
   const bgImages = [bg1, bg2, bg3];
 
   const handleScroll = useCallback(() => {

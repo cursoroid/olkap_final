@@ -25,7 +25,7 @@ const FinalSection = () => {
                     At OLKAP, we transform metal into poetry through a masterful blend of India's rich craftsmanship and contemporary design. Our exquisite accents and lifestyle pieces, crafted with precision and innovative techniques, represent the pinnacle of luxury metalwork, adorning prestigious spaces worldwide.
                 </p>
             </div>
-            <img src="/src/assets/final_section.png" alt="Final" className="final-image" />
+            <img src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/final_section.png?updatedAt=1732295586799" alt="Final" className="final-image" />
 
         </div>
     </div>

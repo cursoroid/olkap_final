@@ -19,7 +19,7 @@ const About = () => {
   >
     <div className="about-container">
       <div className="about-content">
-        <img src="/src/assets/about.png" alt="About" className="about-image" />
+        <img src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/about.png?updatedAt=1732295584120" alt="About" className="about-image" />
         <div className="about-text">
           <h2>THE ART OF METALCRAFT: AN OLKAP LEGACY</h2>
           <p>

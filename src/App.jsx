@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'; 
 import './App.css';
 
@@ -8,7 +8,6 @@ import Featured from './components/featured/featured';
 import About from './components/aboutUs/about';
 import Recommend from "./components/recommend/recommend";
 import Footer from './components/footer/footer';
-import TopPicks from "./components/top-picks/top-picks";
 import Aboutcomp from "./components/aboutcomp/aboutcomp.jsx";
 import FinalSection from "./components/final_section/final_section"; 
 import NotFound from './components/notfound/notfound.jsx';
