@@ -2,87 +2,92 @@
 .about-page {
   position: relative;
   top: 14vh;
-    padding: 2rem; /* Padding for the entire page */
-  }
-  
-  /* Heading styles for "About Us" */
-  .page-heading {
-    font-size: 2.5rem; /* Font size for the heading */
-    font-weight: 500; /* Bold weight */
-    text-align: center; /* Center align the heading */
-    margin-bottom: 3rem; /* Space below the heading */
-    color: #222; /* Dark color for the heading */
-  }
-  
-  /* Section container styles */
+  padding: 2rem; /* Padding for the entire page */
+}
+
+/* Heading styles for "About Us" */
+.page-heading {
+  font-size: 2.5rem; /* Font size for the heading */
+  font-weight: 700; /* Bold weight */
+  text-align: center; /* Left align the heading */
+  margin-bottom: 3rem; /* Space below the heading */
+  color: #222; /* Dark color for the heading */
+  font-family: "Syne", serif; /* Syne font for the page heading */
+ 
+}
+
+/* Section container styles */
+.section-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.section-container.reverse {
+  flex-direction: row-reverse; /* Reverse layout for sections with reverseLayout=true */
+}
+
+/* Section text styles */
+.section-text {
+  flex: 1;
+  max-width: 50%;
+  text-align: left; /* Align text to the left */
+  color: #333;
+  font-family: "Inter", sans-serif;
+  font-weight: 400; /* Font for paragraph text */
+}
+
+.section-text h2 {
+  font-family: "Syne", serif;
+  font-size: 2rem; /* Heading font size */
+  margin-bottom: 1rem; /* Space below the heading */
+  color: #222; /* Title color */
+  font-weight: 600;
+}
+
+.section-text p {
+  font-size: 1.2rem; /* Paragraph font size */
+  line-height: 1.6; /* Line height for better readability */
+  margin-bottom: 1.5rem; /* Space below the paragraph */
+  color: #555; /* Subtle text color */
+  font-family: "Inter", sans-serif;
+  font-weight: 400; /* Font for paragraph text */
+}
+
+/* Section image styles */
+.section-image {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover; /* Ensures the image maintains aspect ratio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
   .section-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 2rem;
+    flex-direction: column; /* Stack sections vertically for smaller screens */
   }
-  
+
   .section-container.reverse {
-    flex-direction: row-reverse; /* Reverse layout for sections with reverseLayout=true */
+    flex-direction: column; /* Reverse does not matter when stacked */
   }
-  
-  /* Section text styles */
+
   .section-text {
-    flex: 1;
-    max-width: 50%;
-    text-align: left; /* Align text to the left */
-    color: #333;
-    font-family: 'SF Pro Display', sans-serif; /* Font for paragraph text */
+    max-width: 100%; /* Full width for text */
+    text-align: center; /* Center-align text for better mobile experience */
   }
-  
-  .section-text h2 {
-    font-size: 2rem; /* Heading font size */
-    margin-bottom: 1rem; /* Space below the heading */
-    color: #222; /* Title color */
-    font-family: 'Helvetica Neue', sans-serif; /* Font for section headings */
-    font-weight: 500;
-  }
-  
-  .section-text p {
-    font-size: 1rem; /* Paragraph font size */
-    line-height: 1.6; /* Line height for better readability */
-    margin-bottom: 1.5rem; /* Space below the paragraph */
-    color: #555; /* Subtle text color */
-    font-family: 'SF Pro Display', sans-serif; /* Font for paragraph text */
-  }
-  
-  /* Section image styles */
+
   .section-image {
-    flex: 1;
-    max-width: 50%;
-    height: auto;
-    object-fit: cover; /* Ensures the image maintains aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+    max-width: 100%; /* Ensure the image fits the container width */
   }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 768px) {
-    .section-container {
-      flex-direction: column; /* Stack sections vertically for smaller screens */
-    }
-  
-    .section-container.reverse {
-      flex-direction: column; /* Reverse does not matter when stacked */
-    }
-  
-    .section-text {
-      max-width: 100%; /* Full width for text */
-      text-align: center; /* Center-align text for better mobile experience */
-    }
-  
-    .section-image {
-      max-width: 100%; /* Ensure the image fits the container width */
-    }
-  
-    .page-heading {
-      font-size: 2rem; /* Slightly smaller font size for mobile screens */
-      margin-bottom: 2rem; /* Adjust spacing for smaller screens */
-    }
+
+  .page-heading {
+    font-size: 2rem; /* Slightly smaller font size for mobile screens */
+    margin-bottom: 2rem; /* Adjust spacing for smaller screens */
+    padding-left: 1rem; /* Reduced padding for mobile */
+    text-align: center; /* Center on mobile for better readability */
   }
-  
+}
