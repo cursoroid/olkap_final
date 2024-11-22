@@ -42,7 +42,7 @@ const Navbarglob = () => {
       <div className="navbar-main">
         {/* Logo - Centered above the navbar options */}
         <div className="navbar-logo">
-          <img src="./src/assets/global_logo.svg" alt="Logo" className="logo-img" />
+          <a href="/"><img src="./src/assets/global_logo.svg" alt="Logo" className="logo-img" /></a>
         </div>
 
         {/* Hamburger Icon or Cross Icon */}

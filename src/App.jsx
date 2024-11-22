@@ -24,6 +24,10 @@ const App = () => {
     setScrolling(window.scrollY > 0);
   };
 
+  window.onload = function() {
+    window.scrollTo(0, 0);
+};
+
   // Toggle menu for mobile view
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
