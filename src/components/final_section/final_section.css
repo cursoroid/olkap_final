@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 40px;
 }
 
 .final-image {
@@ -68,8 +67,9 @@
       max-width: 100%;
       padding: 20px;
   }
+
   .final-container{
-    margin: 5vh 1vh;
+    margin: 0;
   }
 
 }
@@ -80,9 +80,6 @@
   .final-text {
       font-size: 1.1rem;
 
-  }
-  .final-container{
-    margin: 0;
   }
 
   .final-text h2 {

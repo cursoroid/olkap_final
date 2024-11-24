@@ -80,7 +80,7 @@ const Navbar = () => {
           {/* Centered options */}
           <div className="navbar-center">
             <div className="navbar-option">
-              <a href="#">Shop</a>
+              <a href="https://shop.olkap.com/">Shop</a>
             </div>
             <div
               className="navbar-option"
@@ -120,7 +120,7 @@ const Navbar = () => {
       {/* Side Menu */}
       <div className={`side-menu-main ${sideMenuOpen ? 'open' : ''}`}>
         <div className="side-menu">
-          <a className="side-menu-option" href="#">Shop</a>
+          <a className="side-menu-option" href="https://shop.olkap.com/">Shop</a>
           <a className="side-menu-option" onClick={() => toggleSubMenu('furniture')}>
             Furniture
             <div className={`sub-side-menu ${openSubMenu === 'furniture' ? 'show' : ''}`}>

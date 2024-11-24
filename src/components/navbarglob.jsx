@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../components/navbar/navbar.css';
 import "./navbarglob.css";
+import { Link } from 'react-router-dom';
+
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -83,7 +85,7 @@ const Navbarglob = () => {
           {/* Centered options */}
           <div className="navbar-center">
             <div className="navbar-option">
-              <a href="#">Shop</a>
+              <a href="https://shop.olkap.com/">Shop</a>
             </div>
             <div
               className="navbar-option"
@@ -100,7 +102,7 @@ const Navbarglob = () => {
               <a href="#">Decor</a>
             </div>
             <div className="navbar-option">
-              <a href="/gallery">Gallery</a>
+              <Link to="/gallery">Gallery</Link>
             </div>
           </div>
 
@@ -123,7 +125,7 @@ const Navbarglob = () => {
       {/* Side Menu */}
       <div className={`side-menu-main ${sideMenuOpen ? 'open' : ''}`}>
         <div className="side-menu">
-          <a className="side-menu-option" href="#">Shop</a>
+          <a className="side-menu-option" href="https://shop.olkap.com/">Shop</a>
           <a className="side-menu-option" onClick={() => toggleSubMenu('furniture')}>
             Furniture
             <div className={`sub-side-menu ${openSubMenu === 'furniture' ? 'show' : ''}`}>
@@ -144,7 +146,7 @@ const Navbarglob = () => {
               <a href="#" className="side-menu-option">DOption</a>
             </div>
           </a>
-          <a className="side-menu-option" href="/gallery">Gallery</a>
+          <Link className="side-menu-option" to="/gallery">Gallery</Link>
         </div>
         <div className='login-container'>
           <a onClick={handleProfileClick}><span className="material-symbols-outlined profile">

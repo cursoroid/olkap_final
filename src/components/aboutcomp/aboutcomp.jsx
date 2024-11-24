@@ -1,6 +1,7 @@
 import './aboutcomp.css';
 import { motion } from "framer-motion";
 import Navbarglob from "../navbarglob";
+import { useEffect } from 'react';
 
 
 const AboutSection = ({ title, description, imageSrc, reverseLayout }) => {
@@ -26,6 +27,13 @@ const AboutSection = ({ title, description, imageSrc, reverseLayout }) => {
 };
 
 const Aboutcomp = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page on component mount
+    window.scrollTo(0, 0);
+  }, []);
+
+  
   return (
     <div className="about-page">
       <Navbarglob/>

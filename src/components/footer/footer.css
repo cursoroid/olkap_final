@@ -1,9 +1,11 @@
 .footer {
+  position: absolute;
     padding: 5vh;
     background: #ffffff;
     color: #000000;
     margin-top: 100px;
     border-top: 1px solid black;
+    width: 100%;
   }
   
   .footer-logo {

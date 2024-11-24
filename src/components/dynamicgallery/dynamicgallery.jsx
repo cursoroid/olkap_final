@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import './GalleryStyles.css';
 import NavbarGlob from '../navbarglob';
 
@@ -91,6 +92,13 @@ const interiorImages = [
 ];
 
 const DynamicGallery = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page on component mount
+    window.scrollTo(0, 0);
+  }, []);
+
+  
   const [filter, setFilter] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
