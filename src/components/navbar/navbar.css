@@ -50,7 +50,7 @@
 
 
 .sub-menu {
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(255, 255, 255);
   position: fixed;
   width: 100%;
   top: -100%; /* Hidden by default */

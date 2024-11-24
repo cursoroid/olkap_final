@@ -81,6 +81,9 @@
       font-size: 1.1rem;
 
   }
+  .final-container{
+    margin: 0;
+  }
 
   .final-text h2 {
       font-size: 1.7rem;

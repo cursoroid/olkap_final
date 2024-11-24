@@ -36,17 +36,12 @@ const Footer = () => {
         <div className="container mx-auto">
           <div className="footer-row">
             {/* Logo Section */}
-            <div className="footer-column">
+            <div className="footer-column logo-col">
               <a href="#" className="footer-logo">
                 <img
                   src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/SVG%20Logo-02-cropped.svg?updatedAt=1732297799361"
                   alt="logo"
                   className="logo-light"
-                />
-                <img
-                  src="https://ik.imagekit.io/iquid/OLKAP-Catalog/assets/SVG%20Logo-02-cropped.svg?updatedAt=1732297799361"
-                  alt="logo-dark"
-                  className="logo-dark"
                 />
               </a>
             </div>
