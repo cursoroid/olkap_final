@@ -1,20 +1,21 @@
 /* Main container for the About Us page */
 .about-page {
   position: relative;
-  top: 14vh;
-  padding: 2rem; /* Padding for the entire page */
+  margin-top: 16vh;
+  padding: 0 5vh; /* Padding for the entire page */
+  text-align: left;
 }
 
 /* Heading styles for "About Us" */
 .page-heading {
   font-size: 2.5rem; /* Font size for the heading */
   font-weight: 700; /* Bold weight */
-  text-align: center; /* Left align the heading */
   margin-bottom: 3rem; /* Space below the heading */
   color: #222; /* Dark color for the heading */
   font-family: "Syne", serif; /* Syne font for the page heading */
  
 }
+
 
 /* Section container styles */
 .section-container {
@@ -22,7 +23,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 2rem;
+  margin: 5vh 0;
 }
 
 .section-container.reverse {
@@ -69,6 +70,8 @@
 @media (max-width: 768px) {
   .section-container {
     flex-direction: column; /* Stack sections vertically for smaller screens */
+    padding: 0;
+    gap: 0;
   }
 
   .section-container.reverse {
@@ -77,17 +80,33 @@
 
   .section-text {
     max-width: 100%; /* Full width for text */
-    text-align: center; /* Center-align text for better mobile experience */
+    padding: 20px;
+    font-size: 1rem !important;
+  }
+
+  .section-text h2{
+    
+    font-size: 1.5rem !important;
+  }
+
+
+  .section-text p{
+    
+    font-size: 1rem !important;
   }
 
   .section-image {
     max-width: 100%; /* Ensure the image fits the container width */
   }
+  .about-page{
+    padding: 0px;
+    margin-top: 12vh;
+
+  }
 
   .page-heading {
     font-size: 2rem; /* Slightly smaller font size for mobile screens */
-    margin-bottom: 2rem; /* Adjust spacing for smaller screens */
-    padding-left: 1rem; /* Reduced padding for mobile */
-    text-align: center; /* Center on mobile for better readability */
+    margin-bottom: 0rem !important; /* Adjust spacing for smaller screens */
+    padding: 0 20px;
   }
 }
