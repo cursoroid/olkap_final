@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
+import { HashRouter } from 'react-router-dom'; // Import HashRouter
 import './index.css';
 import App from './App.jsx';
 
@@ -10,9 +10,9 @@ import client from './apolloClient'; // Import the Apollo client
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <BrowserRouter> {/* Wrap with BrowserRouter */}
+      <HashRouter> {/* Wrap with HashRouter */}
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </ApolloProvider>
   </StrictMode>
 );

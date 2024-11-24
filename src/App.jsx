@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'; 
+import { useEffect, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 
 import Navbar from './components/navbar/navbar';
@@ -25,7 +25,7 @@ const App = () => {
 
   window.onload = function() {
     window.scrollTo(0, 0);
-};
+  };
 
   // Toggle menu for mobile view
   const toggleMenu = () => {
@@ -65,6 +65,6 @@ const App = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default App;
