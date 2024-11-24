@@ -1,6 +1,8 @@
 import React from 'react';
 import './about.css';
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
+
 
 const About = () => {
   return (
@@ -22,9 +24,10 @@ const About = () => {
           <p>
           At OLKAP, we transform metal into poetry through a masterful blend of India's rich craftsmanship and contemporary design. Our exquisite accents and lifestyle pieces, crafted with precision and innovative techniques, represent the pinnacle of luxury metalwork, adorning prestigious spaces worldwide.          </p>
           <br /><br />
-          <a href='/about' className="about-button">About Us<span class="material-symbols-outlined abt-nxt">
+          <Link to='/about' className="about-button">About Us<span class="material-symbols-outlined abt-nxt">
               arrow_forward_ios
-            </span></a>
+            </span>
+          </Link>
         </div>
       </div>
     </div>

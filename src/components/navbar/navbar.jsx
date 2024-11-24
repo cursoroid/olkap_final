@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './navbar.css';
+import { Link } from 'react-router-dom';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -96,7 +97,7 @@ const Navbar = () => {
               <a href="#">Decor</a>
             </div>
             <div className="navbar-option">
-              <a href="/gallery">Gallery</a>
+            <Link to="/gallery">Gallery</Link>
             </div>
           </div>
 
@@ -140,7 +141,7 @@ const Navbar = () => {
               <a href="#" className="side-menu-option">DOption</a>
             </div>
           </a>
-          <a className="side-menu-option" href="/gallery">Gallery</a>
+          <Link className="side-menu-option" to="/gallery">Gallery</Link>
         </div>
         <div className='login-container'>
           <a onClick={handleProfileClick}><span class="material-symbols-outlined profile">
