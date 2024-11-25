@@ -1,0 +1,31 @@
+name: Sync Fork on Upstream Push
+
+on:
+  repository_dispatch:
+    types: [sync_fork]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/Abhi232003/olkap_final.git
+          git fetch upstream
+
+      - name: Sync with upstream
+        run: |
+          git checkout main  # or your default branch
+          git merge upstream/main -m "Sync with upstream"
+          git push origin main
