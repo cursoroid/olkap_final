@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
+
 import {
   faInstagram,
   faFacebookF,
@@ -51,9 +53,9 @@ const Footer = () => {
               <h4 className="footer-heading">Quick Access</h4>
               <ul className="footer-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="#">Store</a></li>
-                <li><a href="#">Collection</a></li> 
+                <li><Link to="/about">About Us</Link></li>
+                <li><a href="https://shop.olkap.com/">Store</a></li>
+                <li><a href="https://shop.olkap.com/collections">Collection</a></li> 
                 <li><a href="#">Features Products</a></li>
                 <li><a href="#">Terms & Conditions</a></li>
               </ul>
@@ -70,7 +72,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="social-link">
+                  <a href="https://www.instagram.com/olkap.official/" className="social-link">
                     <FontAwesomeIcon icon={faInstagram} />
                     <span className="social-text">Instagram</span>
                   </a>
@@ -82,7 +84,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="social-link">
+                  <a href="https://www.linkedin.com/company/olkapofficial/" className="social-link">
                     <FontAwesomeIcon icon={faLinkedinIn} />
                     <span className="social-text">LinkedIn</span>
                   </a>
