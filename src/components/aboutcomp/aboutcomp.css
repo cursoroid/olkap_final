@@ -1,7 +1,7 @@
 /* Main container for the About Us page */
 .about-page {
   position: relative;
-  margin-top: 16vh;
+  margin-top: 22vh;
   padding: 0 5vh; /* Padding for the entire page */
   text-align: left;
 }
