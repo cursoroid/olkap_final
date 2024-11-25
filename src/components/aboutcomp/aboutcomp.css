@@ -1,7 +1,7 @@
 /* Main container for the About Us page */
 .about-page {
   position: relative;
-  margin-top: 22vh;
+  margin-top: calc(var(--vh, 1vh) * 22); /* Adjust for mobile Safari vh issue */
   padding: 0 5vh; /* Padding for the entire page */
   text-align: left;
 }
@@ -13,12 +13,11 @@
   margin-bottom: 3rem; /* Space below the heading */
   color: #222; /* Dark color for the heading */
   font-family: "Syne", serif; /* Syne font for the page heading */
- 
 }
-
 
 /* Section container styles */
 .section-container {
+  display: -webkit-flex; /* Safari compatibility */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,6 +26,7 @@
 }
 
 .section-container.reverse {
+  -webkit-flex-direction: row-reverse; /* Safari compatibility */
   flex-direction: row-reverse; /* Reverse layout for sections with reverseLayout=true */
 }
 
@@ -62,19 +62,23 @@
   flex: 1;
   max-width: 50%;
   height: auto;
+  -webkit-object-fit: cover; /* Safari compatibility */
   object-fit: cover; /* Ensures the image maintains aspect ratio */
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Safari compatibility */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .section-container {
+    -webkit-flex-direction: column; /* Safari compatibility */
     flex-direction: column; /* Stack sections vertically for smaller screens */
     padding: 0;
     gap: 0;
   }
 
   .section-container.reverse {
+    -webkit-flex-direction: column; /* Safari compatibility */
     flex-direction: column; /* Reverse does not matter when stacked */
   }
 
@@ -84,14 +88,11 @@
     font-size: 1rem !important;
   }
 
-  .section-text h2{
-    
+  .section-text h2 {
     font-size: 1.5rem !important;
   }
 
-
-  .section-text p{
-    
+  .section-text p {
     font-size: 1rem !important;
   }
 
@@ -99,10 +100,10 @@
     max-width: 100%; /* Ensure the image fits the container width */
     height: 100%;
   }
-  .about-page{
-    padding: 0px;
-    margin-top: 12vh;
 
+  .about-page {
+    padding: 0px;
+    margin-top: calc(var(--vh, 1vh) * 12); /* Adjust for mobile Safari vh issue */
   }
 
   .page-heading {
@@ -111,3 +112,15 @@
     padding: 0 20px;
   }
 }
+
+/* Viewport height adjustment for iOS Safari */
+:root {
+  --vh: 1vh; /* Set initial vh value */
+}
+
+/* JavaScript to handle iOS vh issue */
+<script>
+window.addEventListener('resize', () => {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+});
+</script>
